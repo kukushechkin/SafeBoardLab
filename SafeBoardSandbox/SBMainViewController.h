@@ -18,4 +18,6 @@
 @property (nonatomic, retain) NSArray * objectsArray;
 @property (nonatomic, readonly) NSColor * isAnyObjectWorkingStatus;
 
+- (IBAction)removeAllObjects:(id)sender;
+
 @end

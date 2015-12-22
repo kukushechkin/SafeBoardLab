@@ -700,8 +700,8 @@
                             </binding>
                         </connections>
                     </textField>
-                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Xut-Z7-E0m">
-                        <rect key="frame" x="-1" y="-1" width="30" height="30"/>
+                    <button verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Xut-Z7-E0m">
+                        <rect key="frame" x="-1" y="4" width="30" height="30"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="30" id="CwL-3G-3AA"/>
                         </constraints>
@@ -714,8 +714,8 @@
                             <action selector="remove:" target="25o-Y3-bZ8" id="CGg-Ia-5Ko"/>
                         </connections>
                     </button>
-                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="g91-zi-nm4">
-                        <rect key="frame" x="28" y="-1" width="30" height="30"/>
+                    <button verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="g91-zi-nm4">
+                        <rect key="frame" x="28" y="4" width="30" height="30"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="30" id="CJ6-FK-yoo"/>
                         </constraints>
@@ -728,14 +728,14 @@
                             <action selector="add:" target="25o-Y3-bZ8" id="ySE-dM-pSl"/>
                         </connections>
                     </button>
-                    <scrollView autohidesScrollers="YES" horizontalLineScroll="45" horizontalPageScroll="10" verticalLineScroll="45" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zPb-Kt-eEx">
-                        <rect key="frame" x="-1" y="27" width="174" height="334"/>
+                    <scrollView misplaced="YES" autohidesScrollers="YES" horizontalLineScroll="45" horizontalPageScroll="10" verticalLineScroll="45" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zPb-Kt-eEx">
+                        <rect key="frame" x="-1" y="32" width="174" height="329"/>
                         <clipView key="contentView" id="v8y-Lp-Gk0">
-                            <rect key="frame" x="1" y="1" width="172" height="332"/>
+                            <rect key="frame" x="1" y="1" width="172" height="327"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
                                 <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnReordering="NO" columnResizing="NO" multipleSelection="NO" autosaveColumns="NO" rowHeight="43" rowSizeStyle="automatic" viewBased="YES" id="reC-iC-j46">
-                                    <rect key="frame" x="0.0" y="0.0" width="172" height="332"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="172" height="327"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <animations/>
                                     <size key="intercellSpacing" width="3" height="2"/>
@@ -823,14 +823,14 @@
                             <animations/>
                         </scroller>
                     </scrollView>
-                    <box title="Box" boxType="custom" borderType="none" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="Pme-Fq-klx">
-                        <rect key="frame" x="174" y="-47" width="306" height="361"/>
+                    <box misplaced="YES" title="Box" boxType="custom" borderType="none" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="Pme-Fq-klx">
+                        <rect key="frame" x="174" y="58" width="306" height="256"/>
                         <view key="contentView" id="vW5-JA-NNe">
-                            <rect key="frame" x="0.0" y="0.0" width="306" height="361"/>
+                            <rect key="frame" x="0.0" y="0.0" width="306" height="256"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
-                                <slider verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="fAO-gS-4EO">
-                                    <rect key="frame" x="12" y="284" width="270" height="20"/>
+                                <slider verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fAO-gS-4EO">
+                                    <rect key="frame" x="12" y="179" width="270" height="20"/>
                                     <animations/>
                                     <sliderCell key="cell" state="on" alignment="left" maxValue="100000" doubleValue="50.005000500050002" tickMarkPosition="above" allowsTickMarkValuesOnly="YES" sliderType="linear" id="FN8-1e-Sep"/>
                                     <connections>
@@ -842,8 +842,8 @@
                                         <binding destination="25o-Y3-bZ8" name="value" keyPath="selection.theValue" id="ofq-zJ-KFe"/>
                                     </connections>
                                 </slider>
-                                <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="x4Y-fE-Xzb">
-                                    <rect key="frame" x="62" y="319" width="218" height="22"/>
+                                <textField verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="x4Y-fE-Xzb">
+                                    <rect key="frame" x="62" y="214" width="218" height="22"/>
                                     <animations/>
                                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="Far-F9-Brw">
                                         <font key="font" metaFont="system"/>
@@ -854,8 +854,8 @@
                                         <binding destination="25o-Y3-bZ8" name="value" keyPath="selection.theName" id="5J1-gv-aWE"/>
                                     </connections>
                                 </textField>
-                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="1xA-HV-YWB">
-                                    <rect key="frame" x="12" y="322" width="44" height="17"/>
+                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1xA-HV-YWB">
+                                    <rect key="frame" x="12" y="217" width="44" height="17"/>
                                     <animations/>
                                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Name:" id="Aok-mo-W6e">
                                         <font key="font" metaFont="system"/>
@@ -863,8 +863,8 @@
                                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                     </textFieldCell>
                                 </textField>
-                                <progressIndicator wantsLayer="YES" canDrawConcurrently="YES" horizontalHuggingPriority="750" verticalHuggingPriority="750" maxValue="100" bezeled="NO" indeterminate="YES" controlSize="small" style="spinning" translatesAutoresizingMaskIntoConstraints="NO" id="62c-eK-m5A">
-                                    <rect key="frame" x="176" y="255" width="16" height="16"/>
+                                <progressIndicator wantsLayer="YES" canDrawConcurrently="YES" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" maxValue="100" bezeled="NO" indeterminate="YES" controlSize="small" style="spinning" translatesAutoresizingMaskIntoConstraints="NO" id="62c-eK-m5A">
+                                    <rect key="frame" x="176" y="150" width="16" height="16"/>
                                     <animations/>
                                     <connections>
                                         <binding destination="25o-Y3-bZ8" name="animate" keyPath="selection.isWorkInProgress" id="sDH-EA-g2T"/>
@@ -875,8 +875,8 @@
                                         </binding>
                                     </connections>
                                 </progressIndicator>
-                                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="OqS-JL-meI">
-                                    <rect key="frame" x="194" y="246" width="92" height="32"/>
+                                <button verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OqS-JL-meI">
+                                    <rect key="frame" x="194" y="141" width="92" height="32"/>
                                     <animations/>
                                     <buttonCell key="cell" type="push" title="Do Work" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="EGs-CT-2lq">
                                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -920,8 +920,8 @@
                             </binding>
                         </connections>
                     </box>
-                    <colorWell bordered="NO" enabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YVk-4U-mYN">
-                        <rect key="frame" x="153" y="4" width="20" height="20"/>
+                    <colorWell misplaced="YES" bordered="NO" enabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YVk-4U-mYN">
+                        <rect key="frame" x="153" y="8" width="20" height="20"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="20" id="IbE-J0-iWb"/>
                             <constraint firstAttribute="width" constant="20" id="rLv-FO-fog"/>
@@ -932,6 +932,18 @@
                             <binding destination="gp5-ya-kmf" name="value" keyPath="self.isAnyObjectWorkingStatus" id="SA9-0v-XAV"/>
                         </connections>
                     </colorWell>
+                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="I9b-aT-Vil">
+                        <rect key="frame" x="312" y="1" width="154" height="32"/>
+                        <animations/>
+                        <buttonCell key="cell" type="push" title="Remove all objects" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Gcb-di-Klv">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="removeAllObjects:" target="gp5-ya-kmf" id="hIn-4t-hpm"/>
+                            <binding destination="25o-Y3-bZ8" name="enabled" keyPath="arrangedObjects.@count" id="aUi-D5-NwL"/>
+                        </connections>
+                    </button>
                 </subviews>
                 <constraints>
                     <constraint firstItem="Pme-Fq-klx" firstAttribute="bottom" secondItem="g91-zi-nm4" secondAttribute="bottom" constant="47" id="02k-gY-VDJ"/>

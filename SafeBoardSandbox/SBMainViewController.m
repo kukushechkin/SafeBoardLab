@@ -46,6 +46,15 @@
     return retColor;
 }
 
+- (IBAction)removeAllObjects:(id)sender {
+    // If no ARC:
+    /*
+    [self.objectsArray release];
+     */
+    
+    self.objectsArray = [NSArray array];
+}
+
 // If no ARC:
 /*
 - (void)dealloc {
