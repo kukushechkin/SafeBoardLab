@@ -20,7 +20,7 @@ static long ObjectsAlreadyCreated = 1;
 
 - (instancetype)init {
     if(self = [super init]) {
-        self.theName =[NSString stringWithFormat:@"new object %d", ObjectsAlreadyCreated++];
+        self.theName =[NSString stringWithFormat:@"new object %ld", ObjectsAlreadyCreated++];
         m_statusColor = [NSColor blueColor];
     }
     return self;
