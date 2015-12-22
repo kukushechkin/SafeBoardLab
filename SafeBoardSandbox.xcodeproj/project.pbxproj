@@ -16,7 +16,6 @@
 		747D0CB21C29E57B0001FD42 /* UsefulStuff.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 747D0CB01C29E57B0001FD42 /* UsefulStuff.cpp */; };
 		747D0CB31C29E57B0001FD42 /* UsefulStuff.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 747D0CB11C29E57B0001FD42 /* UsefulStuff.hpp */; };
 		747D0CB41C29E5880001FD42 /* libUsefulStuff.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 747D0CA51C29E5090001FD42 /* libUsefulStuff.dylib */; };
-		747D0CB51C29E8BA0001FD42 /* SBTheObject.mm in Sources */ = {isa = PBXBuildFile; fileRef = 747D0C9C1C29B3070001FD42 /* SBTheObject.mm */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -220,7 +219,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				747D0CB21C29E57B0001FD42 /* UsefulStuff.cpp in Sources */,
-				747D0CB51C29E8BA0001FD42 /* SBTheObject.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
