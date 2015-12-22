@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="9046"/>
+        <capability name="box content view" minToolsVersion="7.0"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="NSApplication">
@@ -698,44 +699,7 @@
                             <action selector="add:" target="25o-Y3-bZ8" id="ySE-dM-pSl"/>
                         </connections>
                     </button>
-                    <slider verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="fAO-gS-4EO">
-                        <rect key="frame" x="192" y="283" width="270" height="20"/>
-                        <animations/>
-                        <sliderCell key="cell" state="on" alignment="left" maxValue="10000" doubleValue="50.005000500050002" tickMarkPosition="above" allowsTickMarkValuesOnly="YES" sliderType="linear" id="FN8-1e-Sep"/>
-                        <connections>
-                            <binding destination="25o-Y3-bZ8" name="enabled" keyPath="selection.isWorkInProgress" id="goo-4r-UVh">
-                                <dictionary key="options">
-                                    <string key="NSValueTransformerName">NSNegateBoolean</string>
-                                </dictionary>
-                            </binding>
-                            <binding destination="25o-Y3-bZ8" name="value" keyPath="selection.theValue" id="ofq-zJ-KFe"/>
-                        </connections>
-                    </slider>
-                    <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="x4Y-fE-Xzb">
-                        <rect key="frame" x="242" y="318" width="218" height="22"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="218" id="TmY-u9-JMB"/>
-                        </constraints>
-                        <animations/>
-                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="Far-F9-Brw">
-                            <font key="font" metaFont="system"/>
-                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                        </textFieldCell>
-                        <connections>
-                            <binding destination="25o-Y3-bZ8" name="value" keyPath="selection.theName" id="5J1-gv-aWE"/>
-                        </connections>
-                    </textField>
-                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="1xA-HV-YWB">
-                        <rect key="frame" x="192" y="321" width="44" height="17"/>
-                        <animations/>
-                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Name:" id="Aok-mo-W6e">
-                            <font key="font" metaFont="system"/>
-                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                        </textFieldCell>
-                    </textField>
-                    <scrollView ambiguous="YES" misplaced="YES" autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zPb-Kt-eEx">
+                    <scrollView fixedFrame="YES" autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zPb-Kt-eEx">
                         <rect key="frame" x="-1" y="27" width="174" height="334"/>
                         <clipView key="contentView" ambiguous="YES" id="v8y-Lp-Gk0">
                             <rect key="frame" x="1" y="1" width="172" height="332"/>
@@ -813,64 +777,112 @@
                             <animations/>
                         </scroller>
                     </scrollView>
-                    <progressIndicator wantsLayer="YES" canDrawConcurrently="YES" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" maxValue="100" bezeled="NO" indeterminate="YES" controlSize="small" style="spinning" translatesAutoresizingMaskIntoConstraints="NO" id="62c-eK-m5A">
-                        <rect key="frame" x="356" y="254" width="16" height="16"/>
+                    <box fixedFrame="YES" title="Box" boxType="custom" borderType="none" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="Pme-Fq-klx">
+                        <rect key="frame" x="181" y="208" width="290" height="153"/>
+                        <view key="contentView" ambiguous="YES" id="vW5-JA-NNe">
+                            <rect key="frame" x="0.0" y="0.0" width="290" height="153"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            <subviews>
+                                <slider verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fAO-gS-4EO">
+                                    <rect key="frame" x="12" y="76" width="270" height="20"/>
+                                    <animations/>
+                                    <sliderCell key="cell" state="on" alignment="left" maxValue="10000" doubleValue="50.005000500050002" tickMarkPosition="above" allowsTickMarkValuesOnly="YES" sliderType="linear" id="FN8-1e-Sep"/>
+                                    <connections>
+                                        <binding destination="25o-Y3-bZ8" name="enabled" keyPath="selection.isWorkInProgress" id="goo-4r-UVh">
+                                            <dictionary key="options">
+                                                <string key="NSValueTransformerName">NSNegateBoolean</string>
+                                            </dictionary>
+                                        </binding>
+                                        <binding destination="25o-Y3-bZ8" name="value" keyPath="selection.theValue" id="ofq-zJ-KFe"/>
+                                    </connections>
+                                </slider>
+                                <textField verticalHuggingPriority="750" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="x4Y-fE-Xzb">
+                                    <rect key="frame" x="62" y="111" width="218" height="22"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="218" id="TmY-u9-JMB"/>
+                                    </constraints>
+                                    <animations/>
+                                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="Far-F9-Brw">
+                                        <font key="font" metaFont="system"/>
+                                        <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                    </textFieldCell>
+                                    <connections>
+                                        <binding destination="25o-Y3-bZ8" name="value" keyPath="selection.theName" id="5J1-gv-aWE"/>
+                                    </connections>
+                                </textField>
+                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1xA-HV-YWB">
+                                    <rect key="frame" x="12" y="114" width="44" height="17"/>
+                                    <animations/>
+                                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Name:" id="Aok-mo-W6e">
+                                        <font key="font" metaFont="system"/>
+                                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                    </textFieldCell>
+                                </textField>
+                                <progressIndicator wantsLayer="YES" canDrawConcurrently="YES" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" maxValue="100" bezeled="NO" indeterminate="YES" controlSize="small" style="spinning" translatesAutoresizingMaskIntoConstraints="NO" id="62c-eK-m5A">
+                                    <rect key="frame" x="176" y="47" width="16" height="16"/>
+                                    <animations/>
+                                    <connections>
+                                        <binding destination="25o-Y3-bZ8" name="animate" keyPath="selection.isWorkInProgress" id="sDH-EA-g2T"/>
+                                        <binding destination="25o-Y3-bZ8" name="hidden" keyPath="selection.isWorkInProgress" id="OMo-yg-6HT">
+                                            <dictionary key="options">
+                                                <string key="NSValueTransformerName">NSNegateBoolean</string>
+                                            </dictionary>
+                                        </binding>
+                                    </connections>
+                                </progressIndicator>
+                                <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OqS-JL-meI">
+                                    <rect key="frame" x="194" y="38" width="92" height="32"/>
+                                    <animations/>
+                                    <buttonCell key="cell" type="push" title="Do Work" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="EGs-CT-2lq">
+                                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                        <font key="font" metaFont="system"/>
+                                    </buttonCell>
+                                    <connections>
+                                        <binding destination="25o-Y3-bZ8" name="target" keyPath="selection" id="Cai-cs-bNI">
+                                            <dictionary key="options">
+                                                <string key="NSSelectorName">doWork</string>
+                                            </dictionary>
+                                        </binding>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <animations/>
+                        </view>
                         <animations/>
+                        <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
+                        <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <connections>
-                            <binding destination="25o-Y3-bZ8" name="animate" keyPath="selection.isWorkInProgress" id="sDH-EA-g2T"/>
-                            <binding destination="25o-Y3-bZ8" name="hidden" keyPath="selection.isWorkInProgress" id="OMo-yg-6HT">
-                                <dictionary key="options">
-                                    <string key="NSValueTransformerName">NSNegateBoolean</string>
-                                </dictionary>
-                            </binding>
-                        </connections>
-                    </progressIndicator>
-                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OqS-JL-meI">
-                        <rect key="frame" x="374" y="245" width="92" height="32"/>
-                        <animations/>
-                        <buttonCell key="cell" type="push" title="Do Work" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="EGs-CT-2lq">
-                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                            <font key="font" metaFont="system"/>
-                        </buttonCell>
-                        <connections>
-                            <binding destination="25o-Y3-bZ8" name="target" keyPath="selection" id="Cai-cs-bNI">
-                                <dictionary key="options">
-                                    <string key="NSSelectorName">doWork</string>
-                                </dictionary>
-                            </binding>
-                        </connections>
-                    </button>
-                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bkh-fy-ICz">
-                        <rect key="frame" x="273" y="172" width="108" height="17"/>
-                        <animations/>
-                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Nothing selected" id="VG7-Gg-UaW">
-                            <font key="font" metaFont="system"/>
-                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                        </textFieldCell>
-                        <connections>
-                            <binding destination="25o-Y3-bZ8" name="hidden" keyPath="selection" id="Wd1-4k-4b0">
+                            <binding destination="25o-Y3-bZ8" name="hidden" keyPath="selection.self" id="RSB-8F-mai">
                                 <dictionary key="options">
                                     <integer key="NSNoSelectionPlaceholder" value="1"/>
                                     <string key="NSValueTransformerName">NSIsNil</string>
                                 </dictionary>
                             </binding>
                         </connections>
+                    </box>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4yF-is-0JI">
+                        <rect key="frame" x="286" y="186" width="80" height="17"/>
+                        <animations/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="No selection" id="gpD-7C-ISS">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                        <connections>
+                            <binding destination="25o-Y3-bZ8" name="hidden" keyPath="selection.self" id="Ny8-d3-yEU">
+                                <dictionary key="options">
+                                    <integer key="NSNoSelectionPlaceholder" value="0"/>
+                                    <string key="NSValueTransformerName">NSIsNotNil</string>
+                                </dictionary>
+                            </binding>
+                        </connections>
                     </textField>
                 </subviews>
-                <constraints>
-                    <constraint firstItem="x4Y-fE-Xzb" firstAttribute="top" secondItem="EiT-Mj-1SZ" secondAttribute="top" constant="20" symbolic="YES" id="9oE-V1-8ZR"/>
-                    <constraint firstItem="x4Y-fE-Xzb" firstAttribute="leading" secondItem="1xA-HV-YWB" secondAttribute="trailing" constant="8" symbolic="YES" id="CB4-4w-tgo"/>
-                    <constraint firstItem="1xA-HV-YWB" firstAttribute="baseline" secondItem="x4Y-fE-Xzb" secondAttribute="baseline" id="CtC-7d-szq"/>
-                    <constraint firstItem="1xA-HV-YWB" firstAttribute="leading" secondItem="zPb-Kt-eEx" secondAttribute="trailing" constant="21" id="G6h-cj-L23"/>
-                    <constraint firstItem="fAO-gS-4EO" firstAttribute="top" secondItem="x4Y-fE-Xzb" secondAttribute="bottom" constant="17" id="G8b-TQ-T8H"/>
-                    <constraint firstItem="x4Y-fE-Xzb" firstAttribute="trailing" secondItem="fAO-gS-4EO" secondAttribute="trailing" id="Rxs-Pd-O5H"/>
-                    <constraint firstItem="1xA-HV-YWB" firstAttribute="leading" secondItem="fAO-gS-4EO" secondAttribute="leading" id="dEQ-K4-aCK"/>
-                    <constraint firstAttribute="trailing" secondItem="x4Y-fE-Xzb" secondAttribute="trailing" constant="20" symbolic="YES" id="gTr-WK-S60"/>
-                </constraints>
                 <animations/>
             </view>
-            <point key="canvasLocation" x="506" y="316"/>
+            <point key="canvasLocation" x="385" y="315"/>
         </window>
         <customObject id="gp5-ya-kmf" customClass="SBMainViewController"/>
         <arrayController objectClassName="SBTheObject" automaticallyPreparesContent="YES" avoidsEmptySelection="NO" automaticallyRearrangesObjects="YES" id="25o-Y3-bZ8">

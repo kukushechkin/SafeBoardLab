@@ -26,12 +26,11 @@
     
     dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
     dispatch_async(queue, ^{
-        while(self.theValue--) {
-            long tmp = 2 * self.theValue;
-            NSLog(@"%d", self.theValue);
+        while(self.theValue-- > 0) {
+            NSLog(@"%ld", self.theValue);
         }
         
-        dispatch_sync(dispatch_get_main_queue(), ^{
+        dispatch_async(dispatch_get_main_queue(), ^{
             NSLog(@"Work is done");
             [self willChangeValueForKey:@"isWorkInProgress"];
             m_isWorkInProgress = NO;
