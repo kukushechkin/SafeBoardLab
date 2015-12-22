@@ -12,8 +12,10 @@
 
 @interface SBMainViewController : NSViewController
 {
+    IBOutlet NSArrayController * m_objectsArrayController;
 }
 
 @property (nonatomic, retain) NSArray * objectsArray;
+@property (nonatomic, readonly) NSColor * isAnyObjectWorkingStatus;
 
 @end

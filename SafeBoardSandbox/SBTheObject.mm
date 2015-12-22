@@ -9,6 +9,8 @@
 #import "SBTheObject.h"
 #include <UsefulStuff.hpp>
 
+static long ObjectsAlreadyCreated = 1;
+
 @interface SBTheObject()
     @property (assign) BOOL isWorkInProgress;
 @end
@@ -18,7 +20,7 @@
 
 - (instancetype)init {
     if(self = [super init]) {
-        self.theName = @"new object";
+        self.theName =[NSString stringWithFormat:@"new object %d", ObjectsAlreadyCreated++];
         m_statusColor = [NSColor blueColor];
     }
     return self;
@@ -42,7 +44,9 @@
                 [self willChangeValueForKey:@"statusColor"];
                 m_statusColor = [NSColor greenColor];
                 [self didChangeValueForKey:@"statusColor"];
-            });
+            });},
+        [self](long updatedValue) {
+            self.theValue = updatedValue;
         });
     });
 }

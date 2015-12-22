@@ -15,7 +15,7 @@ class MyUsefulObject
 {
 public:
     MyUsefulObject(const long data);
-    void DoWork(const std::function<void(void)> callback);
+    void DoWork(const std::function<void(void)> doneCallback, const std::function<void(long)> progressCallback);
     
 private:
     long m_data;

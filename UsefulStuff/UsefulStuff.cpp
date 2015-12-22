@@ -14,10 +14,11 @@ MyUsefulObject::MyUsefulObject(const long data)
     m_data = data;
 }
 
-void MyUsefulObject::DoWork(const std::function<void(void)> callback)
+void MyUsefulObject::DoWork(const std::function<void(void)> doneCallback, const std::function<void(long)> progressCallback)
 {
     while(m_data-- > 0) {
         std::cout << m_data << std::endl;
+        progressCallback(m_data);
     }
-    callback();
+    doneCallback();
 }
