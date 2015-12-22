@@ -12,7 +12,11 @@
 		747D0C8E1C29B0970001FD42 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 747D0C8D1C29B0970001FD42 /* Assets.xcassets */; };
 		747D0C911C29B0970001FD42 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 747D0C8F1C29B0970001FD42 /* MainMenu.xib */; };
 		747D0C9A1C29B17B0001FD42 /* SBMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 747D0C991C29B17B0001FD42 /* SBMainViewController.m */; };
-		747D0C9D1C29B3070001FD42 /* SBTheObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 747D0C9C1C29B3070001FD42 /* SBTheObject.m */; };
+		747D0C9D1C29B3070001FD42 /* SBTheObject.mm in Sources */ = {isa = PBXBuildFile; fileRef = 747D0C9C1C29B3070001FD42 /* SBTheObject.mm */; };
+		747D0CB21C29E57B0001FD42 /* UsefulStuff.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 747D0CB01C29E57B0001FD42 /* UsefulStuff.cpp */; };
+		747D0CB31C29E57B0001FD42 /* UsefulStuff.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 747D0CB11C29E57B0001FD42 /* UsefulStuff.hpp */; };
+		747D0CB41C29E5880001FD42 /* libUsefulStuff.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 747D0CA51C29E5090001FD42 /* libUsefulStuff.dylib */; };
+		747D0CB51C29E8BA0001FD42 /* SBTheObject.mm in Sources */ = {isa = PBXBuildFile; fileRef = 747D0C9C1C29B3070001FD42 /* SBTheObject.mm */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,11 +30,22 @@
 		747D0C981C29B17B0001FD42 /* SBMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBMainViewController.h; sourceTree = "<group>"; };
 		747D0C991C29B17B0001FD42 /* SBMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBMainViewController.m; sourceTree = "<group>"; };
 		747D0C9B1C29B3070001FD42 /* SBTheObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBTheObject.h; sourceTree = "<group>"; };
-		747D0C9C1C29B3070001FD42 /* SBTheObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBTheObject.m; sourceTree = "<group>"; };
+		747D0C9C1C29B3070001FD42 /* SBTheObject.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SBTheObject.mm; sourceTree = "<group>"; };
+		747D0CA51C29E5090001FD42 /* libUsefulStuff.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libUsefulStuff.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
+		747D0CB01C29E57B0001FD42 /* UsefulStuff.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = UsefulStuff.cpp; sourceTree = "<group>"; };
+		747D0CB11C29E57B0001FD42 /* UsefulStuff.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = UsefulStuff.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		747D0C811C29B0960001FD42 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				747D0CB41C29E5880001FD42 /* libUsefulStuff.dylib in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		747D0CA21C29E5090001FD42 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -44,6 +59,7 @@
 			isa = PBXGroup;
 			children = (
 				747D0C861C29B0970001FD42 /* SafeBoardSandbox */,
+				747D0CA61C29E5090001FD42 /* UsefulStuff */,
 				747D0C851C29B0970001FD42 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -52,6 +68,7 @@
 			isa = PBXGroup;
 			children = (
 				747D0C841C29B0970001FD42 /* SafeBoardSandbox.app */,
+				747D0CA51C29E5090001FD42 /* libUsefulStuff.dylib */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -68,7 +85,7 @@
 				747D0C981C29B17B0001FD42 /* SBMainViewController.h */,
 				747D0C991C29B17B0001FD42 /* SBMainViewController.m */,
 				747D0C9B1C29B3070001FD42 /* SBTheObject.h */,
-				747D0C9C1C29B3070001FD42 /* SBTheObject.m */,
+				747D0C9C1C29B3070001FD42 /* SBTheObject.mm */,
 			);
 			path = SafeBoardSandbox;
 			sourceTree = "<group>";
@@ -81,7 +98,27 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		747D0CA61C29E5090001FD42 /* UsefulStuff */ = {
+			isa = PBXGroup;
+			children = (
+				747D0CB01C29E57B0001FD42 /* UsefulStuff.cpp */,
+				747D0CB11C29E57B0001FD42 /* UsefulStuff.hpp */,
+			);
+			path = UsefulStuff;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		747D0CA31C29E5090001FD42 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				747D0CB31C29E57B0001FD42 /* UsefulStuff.hpp in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
 		747D0C831C29B0960001FD42 /* SafeBoardSandbox */ = {
@@ -101,6 +138,23 @@
 			productReference = 747D0C841C29B0970001FD42 /* SafeBoardSandbox.app */;
 			productType = "com.apple.product-type.application";
 		};
+		747D0CA41C29E5090001FD42 /* UsefulStuff */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 747D0CAD1C29E5090001FD42 /* Build configuration list for PBXNativeTarget "UsefulStuff" */;
+			buildPhases = (
+				747D0CA11C29E5090001FD42 /* Sources */,
+				747D0CA21C29E5090001FD42 /* Frameworks */,
+				747D0CA31C29E5090001FD42 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = UsefulStuff;
+			productName = UsefulStuff;
+			productReference = 747D0CA51C29E5090001FD42 /* libUsefulStuff.dylib */;
+			productType = "com.apple.product-type.library.dynamic";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -111,6 +165,9 @@
 				ORGANIZATIONNAME = "Vladimir Kukushkin";
 				TargetAttributes = {
 					747D0C831C29B0960001FD42 = {
+						CreatedOnToolsVersion = 7.1;
+					};
+					747D0CA41C29E5090001FD42 = {
 						CreatedOnToolsVersion = 7.1;
 					};
 				};
@@ -129,6 +186,7 @@
 			projectRoot = "";
 			targets = (
 				747D0C831C29B0960001FD42 /* SafeBoardSandbox */,
+				747D0CA41C29E5090001FD42 /* UsefulStuff */,
 			);
 		};
 /* End PBXProject section */
@@ -151,9 +209,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				747D0C8C1C29B0970001FD42 /* main.m in Sources */,
-				747D0C9D1C29B3070001FD42 /* SBTheObject.m in Sources */,
+				747D0C9D1C29B3070001FD42 /* SBTheObject.mm in Sources */,
 				747D0C891C29B0970001FD42 /* AppDelegate.m in Sources */,
 				747D0C9A1C29B17B0001FD42 /* SBMainViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		747D0CA11C29E5090001FD42 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				747D0CB21C29E57B0001FD42 /* UsefulStuff.cpp in Sources */,
+				747D0CB51C29E8BA0001FD42 /* SBTheObject.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -255,6 +322,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
+				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/UsefulStuff\"";
 				INFOPLIST_FILE = SafeBoardSandbox/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.kaspersky.SafeBoardSandbox;
@@ -267,9 +335,38 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
+				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/UsefulStuff\"";
 				INFOPLIST_FILE = SafeBoardSandbox/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.kaspersky.SafeBoardSandbox;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		747D0CAE1C29E5090001FD42 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				EXECUTABLE_PREFIX = lib;
+				GCC_ENABLE_CPP_EXCEPTIONS = YES;
+				GCC_ENABLE_CPP_RTTI = YES;
+				GCC_SYMBOLS_PRIVATE_EXTERN = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		747D0CAF1C29E5090001FD42 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				EXECUTABLE_PREFIX = lib;
+				GCC_ENABLE_CPP_EXCEPTIONS = YES;
+				GCC_ENABLE_CPP_RTTI = YES;
+				GCC_SYMBOLS_PRIVATE_EXTERN = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -291,6 +388,14 @@
 			buildConfigurations = (
 				747D0C961C29B0970001FD42 /* Debug */,
 				747D0C971C29B0970001FD42 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		747D0CAD1C29E5090001FD42 /* Build configuration list for PBXNativeTarget "UsefulStuff" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				747D0CAE1C29E5090001FD42 /* Debug */,
+				747D0CAF1C29E5090001FD42 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};

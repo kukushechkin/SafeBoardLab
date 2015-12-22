@@ -677,6 +677,23 @@
                 <rect key="frame" x="0.0" y="0.0" width="480" height="360"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4yF-is-0JI">
+                        <rect key="frame" x="270" y="169" width="110" height="22"/>
+                        <animations/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="No selection" id="gpD-7C-ISS">
+                            <font key="font" size="18" name=".AppleSystemUIFont"/>
+                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                        <connections>
+                            <binding destination="25o-Y3-bZ8" name="hidden" keyPath="selection.self" id="Ny8-d3-yEU">
+                                <dictionary key="options">
+                                    <integer key="NSNoSelectionPlaceholder" value="0"/>
+                                    <string key="NSValueTransformerName">NSIsNotNil</string>
+                                </dictionary>
+                            </binding>
+                        </connections>
+                    </textField>
                     <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Xut-Z7-E0m">
                         <rect key="frame" x="-1" y="-1" width="30" height="30"/>
                         <animations/>
@@ -794,7 +811,7 @@
                                 <slider verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fAO-gS-4EO">
                                     <rect key="frame" x="12" y="284" width="270" height="20"/>
                                     <animations/>
-                                    <sliderCell key="cell" state="on" alignment="left" maxValue="10000" doubleValue="50.005000500050002" tickMarkPosition="above" allowsTickMarkValuesOnly="YES" sliderType="linear" id="FN8-1e-Sep"/>
+                                    <sliderCell key="cell" state="on" alignment="left" maxValue="100000" doubleValue="50.005000500050002" tickMarkPosition="above" allowsTickMarkValuesOnly="YES" sliderType="linear" id="FN8-1e-Sep"/>
                                     <connections>
                                         <binding destination="25o-Y3-bZ8" name="enabled" keyPath="selection.isWorkInProgress" id="goo-4r-UVh">
                                             <dictionary key="options">
@@ -897,6 +914,7 @@
                         <animations/>
                         <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
                         <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <font key="titleFont" metaFont="smallSystem"/>
                         <connections>
                             <binding destination="25o-Y3-bZ8" name="hidden" keyPath="selection.self" id="RSB-8F-mai">
                                 <dictionary key="options">
@@ -906,27 +924,10 @@
                             </binding>
                         </connections>
                     </box>
-                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4yF-is-0JI">
-                        <rect key="frame" x="286" y="186" width="80" height="17"/>
-                        <animations/>
-                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="No selection" id="gpD-7C-ISS">
-                            <font key="font" metaFont="system"/>
-                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                        </textFieldCell>
-                        <connections>
-                            <binding destination="25o-Y3-bZ8" name="hidden" keyPath="selection.self" id="Ny8-d3-yEU">
-                                <dictionary key="options">
-                                    <integer key="NSNoSelectionPlaceholder" value="0"/>
-                                    <string key="NSValueTransformerName">NSIsNotNil</string>
-                                </dictionary>
-                            </binding>
-                        </connections>
-                    </textField>
                 </subviews>
                 <animations/>
             </view>
-            <point key="canvasLocation" x="525" y="260"/>
+            <point key="canvasLocation" x="667" y="237"/>
         </window>
         <customObject id="gp5-ya-kmf" customClass="SBMainViewController"/>
         <arrayController objectClassName="SBTheObject" automaticallyPreparesContent="YES" avoidsEmptySelection="NO" automaticallyRearrangesObjects="YES" id="25o-Y3-bZ8">

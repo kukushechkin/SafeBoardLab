@@ -3,10 +3,11 @@
 //  SafeBoardSandbox
 //
 //  Created by Vladimir Kukushkin on 12/22/15.
-//  Copyright © 2015 Vladimir Kukushkin. All rights reserved.
+//  Copyright © 2015 Kaspersky Lab. All rights reserved.
 //
 
 #import "SBTheObject.h"
+#include <UsefulStuff.hpp>
 
 @interface SBTheObject()
     @property (assign) BOOL isWorkInProgress;
@@ -32,17 +33,16 @@
     
     dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
     dispatch_async(queue, ^{
-        while(self.theValue-- > 0) {
-            NSLog(@"%ld", self.theValue);
-        }
-        
-        dispatch_async(dispatch_get_main_queue(), ^{
-            NSLog(@"Work is done");
-            self.isWorkInProgress = NO;
-            
-            [self willChangeValueForKey:@"statusColor"];
-            m_statusColor = [NSColor greenColor];
-            [self didChangeValueForKey:@"statusColor"];
+        MyUsefulObject stuffObject(self.theValue);
+        stuffObject.DoWork([self]() {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                NSLog(@"Work is done");
+                self.isWorkInProgress = NO;
+                
+                [self willChangeValueForKey:@"statusColor"];
+                m_statusColor = [NSColor greenColor];
+                [self didChangeValueForKey:@"statusColor"];
+            });
         });
     });
 }
