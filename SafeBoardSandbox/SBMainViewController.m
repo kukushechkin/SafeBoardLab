@@ -12,8 +12,20 @@
 @implementation SBMainViewController
 
 - (void)awakeFromNib {
+    self.objectsArray = [NSArray array];
     
-    self.objectsArray = [NSArray arrayWithObjects:nil];
+    // If no ARC:
+    /*
+    self.objectsArray = [[NSArray alloc] init];  // or new
+     */
 }
+
+// If no ARC:
+/*
+- (void)dealloc {
+    [self.objectsArray release];
+    [super dealloc];
+}
+*/
 
 @end

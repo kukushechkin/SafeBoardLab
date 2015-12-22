@@ -6,16 +6,19 @@
 //  Copyright © 2015 Vladimir Kukushkin. All rights reserved.
 //
 
+#import <Cocoa/Cocoa.h>
 #import <Foundation/Foundation.h>
 
 @interface SBTheObject : NSObject
 {
-    BOOL m_isWorkInProgress;
+    NSColor * m_statusColor;
 }
 
 @property (assign) long theValue;
 @property (retain) NSString * theName;
 @property (readonly) BOOL isWorkInProgress;
+
+@property (readonly) NSColor * statusColor;
 
 - (void)doWork;
 

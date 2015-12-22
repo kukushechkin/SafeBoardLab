@@ -8,21 +8,27 @@
 
 #import "SBTheObject.h"
 
-@implementation SBTheObject
+@interface SBTheObject()
+    @property (assign) BOOL isWorkInProgress;
+@end
 
-@synthesize isWorkInProgress = m_isWorkInProgress;
+@implementation SBTheObject
+@synthesize statusColor = m_statusColor;
 
 - (instancetype)init {
     if(self = [super init]) {
         self.theName = @"new object";
+        m_statusColor = [NSColor blueColor];
     }
     return self;
 }
 
 - (void)doWork {
-    [self willChangeValueForKey:@"isWorkInProgress"];
-    m_isWorkInProgress = YES;
-    [self didChangeValueForKey:@"isWorkInProgress"];
+    self.isWorkInProgress = YES;
+
+    [self willChangeValueForKey:@"statusColor"];
+    m_statusColor = [NSColor redColor];
+    [self didChangeValueForKey:@"statusColor"];
     
     dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
     dispatch_async(queue, ^{
@@ -32,9 +38,11 @@
         
         dispatch_async(dispatch_get_main_queue(), ^{
             NSLog(@"Work is done");
-            [self willChangeValueForKey:@"isWorkInProgress"];
-            m_isWorkInProgress = NO;
-            [self didChangeValueForKey:@"isWorkInProgress"];
+            self.isWorkInProgress = NO;
+            
+            [self willChangeValueForKey:@"statusColor"];
+            m_statusColor = [NSColor greenColor];
+            [self didChangeValueForKey:@"statusColor"];
         });
     });
 }
