@@ -17,7 +17,7 @@ MyUsefulObject::MyUsefulObject(const long data)
 void MyUsefulObject::DoWork(const std::function<void(void)> doneCallback, const std::function<void(long)> progressCallback)
 {
     while(m_data-- > 0) {
-        std::cout << m_data << std::endl;
+//        std::cout << m_data << std::endl;
         progressCallback(m_data);
     }
     doneCallback();
