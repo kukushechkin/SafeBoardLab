@@ -832,7 +832,7 @@
                                 <slider verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="fAO-gS-4EO">
                                     <rect key="frame" x="12" y="179" width="270" height="20"/>
                                     <animations/>
-                                    <sliderCell key="cell" state="on" alignment="left" maxValue="100000" doubleValue="50.005000500050002" tickMarkPosition="above" allowsTickMarkValuesOnly="YES" sliderType="linear" id="FN8-1e-Sep"/>
+                                    <sliderCell key="cell" state="on" alignment="left" maxValue="1000000" doubleValue="50.005000500050002" tickMarkPosition="above" allowsTickMarkValuesOnly="YES" sliderType="linear" id="FN8-1e-Sep"/>
                                     <connections>
                                         <binding destination="25o-Y3-bZ8" name="enabled" keyPath="selection.isWorkInProgress" id="goo-4r-UVh">
                                             <dictionary key="options">
@@ -883,6 +883,11 @@
                                         <font key="font" metaFont="system"/>
                                     </buttonCell>
                                     <connections>
+                                        <binding destination="25o-Y3-bZ8" name="enabled" keyPath="selection.isWorkInProgress" id="r5b-tx-EQi">
+                                            <dictionary key="options">
+                                                <string key="NSValueTransformerName">NSNegateBoolean</string>
+                                            </dictionary>
+                                        </binding>
                                         <binding destination="25o-Y3-bZ8" name="target" keyPath="selection" id="Cai-cs-bNI">
                                             <dictionary key="options">
                                                 <string key="NSSelectorName">doWork</string>
