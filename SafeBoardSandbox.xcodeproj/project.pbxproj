@@ -11,6 +11,8 @@
 		747D0C8C1C29B0970001FD42 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 747D0C8B1C29B0970001FD42 /* main.m */; };
 		747D0C8E1C29B0970001FD42 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 747D0C8D1C29B0970001FD42 /* Assets.xcassets */; };
 		747D0C911C29B0970001FD42 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 747D0C8F1C29B0970001FD42 /* MainMenu.xib */; };
+		747D0C9A1C29B17B0001FD42 /* SBMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 747D0C991C29B17B0001FD42 /* SBMainViewController.m */; };
+		747D0C9D1C29B3070001FD42 /* SBTheObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 747D0C9C1C29B3070001FD42 /* SBTheObject.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +23,10 @@
 		747D0C8D1C29B0970001FD42 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		747D0C901C29B0970001FD42 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		747D0C921C29B0970001FD42 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		747D0C981C29B17B0001FD42 /* SBMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBMainViewController.h; sourceTree = "<group>"; };
+		747D0C991C29B17B0001FD42 /* SBMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBMainViewController.m; sourceTree = "<group>"; };
+		747D0C9B1C29B3070001FD42 /* SBTheObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBTheObject.h; sourceTree = "<group>"; };
+		747D0C9C1C29B3070001FD42 /* SBTheObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBTheObject.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +65,10 @@
 				747D0C8F1C29B0970001FD42 /* MainMenu.xib */,
 				747D0C921C29B0970001FD42 /* Info.plist */,
 				747D0C8A1C29B0970001FD42 /* Supporting Files */,
+				747D0C981C29B17B0001FD42 /* SBMainViewController.h */,
+				747D0C991C29B17B0001FD42 /* SBMainViewController.m */,
+				747D0C9B1C29B3070001FD42 /* SBTheObject.h */,
+				747D0C9C1C29B3070001FD42 /* SBTheObject.m */,
 			);
 			path = SafeBoardSandbox;
 			sourceTree = "<group>";
@@ -141,7 +151,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				747D0C8C1C29B0970001FD42 /* main.m in Sources */,
+				747D0C9D1C29B3070001FD42 /* SBTheObject.m in Sources */,
 				747D0C891C29B0970001FD42 /* AppDelegate.m in Sources */,
+				747D0C9A1C29B17B0001FD42 /* SBMainViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
