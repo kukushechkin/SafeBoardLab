@@ -1155,6 +1155,7 @@
                         </buttonCell>
                         <connections>
                             <action selector="add:" target="1pB-Tj-LzH" id="gAX-hK-l0j"/>
+                            <binding destination="Nzg-fR-HcK" name="enabled" keyPath="self.isConnected" id="qAv-t8-rWW"/>
                         </connections>
                     </button>
                     <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dmM-FS-tdz">
@@ -1166,6 +1167,7 @@
                         </buttonCell>
                         <connections>
                             <action selector="remove:" target="1pB-Tj-LzH" id="brr-d5-6Tb"/>
+                            <binding destination="Nzg-fR-HcK" name="enabled" keyPath="self.isConnected" id="9HQ-ZJ-cdn"/>
                         </connections>
                     </button>
                     <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Wap-KY-NTE">
@@ -1232,10 +1234,38 @@
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
+                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kBW-Gq-CTG">
+                        <rect key="frame" x="380" y="148" width="92" height="32"/>
+                        <animations/>
+                        <buttonCell key="cell" type="push" title="Connect" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="P6G-hX-Clo">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="connect:" target="Nzg-fR-HcK" id="cki-4k-7Ed"/>
+                            <binding destination="Nzg-fR-HcK" name="enabled" keyPath="self.isConnected" id="Hp2-K4-2Vd">
+                                <dictionary key="options">
+                                    <string key="NSValueTransformerName">NSNegateBoolean</string>
+                                </dictionary>
+                            </binding>
+                        </connections>
+                    </button>
+                    <progressIndicator wantsLayer="YES" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" maxValue="100" bezeled="NO" indeterminate="YES" controlSize="small" style="spinning" translatesAutoresizingMaskIntoConstraints="NO" id="C4r-9B-wYY">
+                        <rect key="frame" x="362" y="157" width="16" height="16"/>
+                        <animations/>
+                        <connections>
+                            <binding destination="Nzg-fR-HcK" name="animate" keyPath="self.isConnecting" id="vzT-UX-8gh"/>
+                            <binding destination="Nzg-fR-HcK" name="hidden" keyPath="self.isConnecting" id="zPF-eH-qee">
+                                <dictionary key="options">
+                                    <string key="NSValueTransformerName">NSNegateBoolean</string>
+                                </dictionary>
+                            </binding>
+                        </connections>
+                    </progressIndicator>
                 </subviews>
                 <animations/>
             </view>
-            <point key="canvasLocation" x="370" y="1011"/>
+            <point key="canvasLocation" x="249" y="919"/>
         </window>
         <arrayController objectClassName="SBTodoItem" id="1pB-Tj-LzH" customClass="SBTodoItemsArrayController">
             <declaredKeys>

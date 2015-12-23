@@ -14,6 +14,9 @@
 {
     todo_sample::TodoManager m_todoManager;
 }
+
+    @property (assign) BOOL isConnecting;
+    @property (assign) BOOL isConnected;
 @end
 
 @implementation SBTodoManager
@@ -22,6 +25,20 @@
     if(self = [super init]) {
     }
     return self;
+}
+
+- (IBAction)connect:(id)sender {
+    self.isConnecting = YES;
+    dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+    dispatch_async(queue, ^{
+        if(m_todoManager.Connect()) {
+           // TODO:
+        }
+        dispatch_async(dispatch_get_main_queue(), ^{
+            self.isConnecting = NO;
+            self.isConnected = YES;
+        });
+    });
 }
 
 - (void)awakeFromNib {
