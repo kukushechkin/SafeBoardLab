@@ -62,11 +62,11 @@
     auto rawItem = m_todoManager.GetItems()[[object selectionIndex]];
     
     if([keyPath isEqualToString:@"arrangedObjects.todoTitle"]) {
-        strncpy(rawItem.title, std::string('\0', 256).c_str(), 256);
+        strncpy(rawItem.title, std::string(256, '\0').c_str(), 256);
         strncpy(rawItem.title, [selectedItem.todoTitle UTF8String], selectedItem.todoTitle.length);
     }
     if([keyPath isEqualToString:@"arrangedObjects.todoDescription"]) {
-        strncpy(rawItem.description, std::string('\0', 1024).c_str(), 1024);
+        strncpy(rawItem.description, std::string(1024, '\0').c_str(), 1024);
         strncpy(rawItem.description, [selectedItem.todoDescription UTF8String], selectedItem.todoDescription.length);
     }
     
