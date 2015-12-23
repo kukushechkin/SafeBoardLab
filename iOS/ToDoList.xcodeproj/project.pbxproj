@@ -20,6 +20,7 @@
 		DE19F4F41C2AC15A00A7E471 /* libtodo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DE19F4E21C2AC07800A7E471 /* libtodo.a */; };
 		DE569A4B1C2AF29900D77344 /* todo_manager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DE569A4A1C2AF29900D77344 /* todo_manager.cpp */; };
 		DE849CB51C2ACD6200076F9D /* ToDoItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DE849CB41C2ACD6200076F9D /* ToDoItemCell.m */; };
+		DE849CBE1C2AFA9000076F9D /* NSDate+Equality.m in Sources */ = {isa = PBXBuildFile; fileRef = DE849CBD1C2AFA9000076F9D /* NSDate+Equality.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +72,8 @@
 		DE569A4A1C2AF29900D77344 /* todo_manager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = todo_manager.cpp; sourceTree = "<group>"; };
 		DE849CB31C2ACD6200076F9D /* ToDoItemCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToDoItemCell.h; sourceTree = "<group>"; };
 		DE849CB41C2ACD6200076F9D /* ToDoItemCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToDoItemCell.m; sourceTree = "<group>"; };
+		DE849CBC1C2AFA9000076F9D /* NSDate+Equality.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Equality.h"; sourceTree = "<group>"; };
+		DE849CBD1C2AFA9000076F9D /* NSDate+Equality.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Equality.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,6 +169,8 @@
 				DE19F4C41C2ABC5600A7E471 /* NSString+Interop.mm */,
 				DE19F4C61C2ABC6A00A7E471 /* ToDoItem+Interop.h */,
 				DE19F4C71C2ABC6A00A7E471 /* ToDoItem+Interop.mm */,
+				DE849CBC1C2AFA9000076F9D /* NSDate+Equality.h */,
+				DE849CBD1C2AFA9000076F9D /* NSDate+Equality.m */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -302,6 +307,7 @@
 				DE182E201C2AAC0000CB590E /* ToDoTableViewController.m in Sources */,
 				DE19F4C01C2AAE5C00A7E471 /* ToDoItem.m in Sources */,
 				DE19F4BD1C2AAE3D00A7E471 /* ToDoManager.mm in Sources */,
+				DE849CBE1C2AFA9000076F9D /* NSDate+Equality.m in Sources */,
 				DE19F4C51C2ABC5600A7E471 /* NSString+Interop.mm in Sources */,
 				DE182E1F1C2AAC0000CB590E /* main.m in Sources */,
 				DE182E1E1C2AAC0000CB590E /* AppDelegate.m in Sources */,
@@ -386,7 +392,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -424,7 +430,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";

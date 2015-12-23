@@ -1,4 +1,5 @@
 #import "ToDoTableViewController.h"
+#import "ToDoItemCell.h"
 #import "ToDoManager.h"
 
 typedef NS_ENUM(NSUInteger, ToDoTableViewControllerMode) {
@@ -46,7 +47,7 @@ typedef NS_ENUM(NSUInteger, ToDoTableViewControllerMode) {
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+
     self.mode = kToDoTableViewControllerMode_Connecting;
     
     ToDoTableViewController * __weak weakSelf = self;
@@ -69,25 +70,23 @@ typedef NS_ENUM(NSUInteger, ToDoTableViewControllerMode) {
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    id<ToDoItem> todoItem = self.todoItems[indexPath.row];
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ToDoItem" forIndexPath:indexPath];
-    cell.textLabel.text = todoItem.title;
-    cell.detailTextLabel.text = todoItem.text;
+    ToDoItemCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ToDoItem" forIndexPath:indexPath];
+    [cell fillWithToDoItem:self.todoItems[indexPath.row]];
     return cell;
 }
 
 #pragma mark - ToDoManagerDelegate
 
 - (void)todoManager:(ToDoManager *)todoManager didAddItem:(id<ToDoItem>)item {
-    // TODO: reload table view
+    [self reloadToDoItems];
 }
 
 - (void)todoManager:(ToDoManager *)todoManager didUpdateItem:(id<ToDoItem>)item {
-    // TODO: reload table view
+    [self reloadToDoItems];
 }
 
 - (void)todoManager:(ToDoManager *)todoManager didDeleteItemWithIdentifier:(NSString *)identifier {
-    // TODO: reload table view
+    [self reloadToDoItems];
 }
 
 #pragma mark - Private

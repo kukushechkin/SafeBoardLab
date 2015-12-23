@@ -63,9 +63,7 @@
 
 - (void)addItem:(id<ToDoItem>)item {
     todo_sample::TodoItem itemStruct = _todoManager.CreateItem();
-    strcpy(itemStruct.title, [item.title UTF8String]);
-    strcpy(itemStruct.description, [item.text UTF8String]);
-    itemStruct.dueDateUtc = (std::time_t)[item.date timeIntervalSince1970];
+    [(ToDoItem *)item fillToDoItemStruct:itemStruct];
     _todoManager.UpdateItem(itemStruct);
 }
 

@@ -6,4 +6,6 @@
 
 - (instancetype)initWithToDoItemStruct:(const todo_sample::TodoItem &)todoItemStruct;
 
+- (void)fillToDoItemStruct:(todo_sample::TodoItem &)todoItemStruct;
+
 @end

@@ -11,4 +11,19 @@
                                date:[NSDate dateWithTimeIntervalSince1970:todoItemStruct.dueDateUtc]];
 }
 
+- (void)fillToDoItemStruct:(todo_sample::TodoItem &)todoItemStruct {
+    if (self.identifier != nil) {
+        todoItemStruct.id = [self.identifier todoItemId];
+    }
+    if (self.title != nil) {
+        strncpy(todoItemStruct.title, [self.title UTF8String], sizeof(todoItemStruct.title));
+    }
+    if (self.text != nil) {
+        strncpy(todoItemStruct.description, [self.text UTF8String], sizeof(todoItemStruct.description));
+    }
+    if (self.date != nil) {
+        todoItemStruct.dueDateUtc = (std::time_t)[self.date timeIntervalSince1970];
+    }
+}
+
 @end
