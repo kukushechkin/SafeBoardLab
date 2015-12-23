@@ -6,13 +6,15 @@ afterEvaluate {
         def ndkDir = project.plugins.findPlugin('com.android.application').sdkHandler.getNdkFolder()
         def ndkCmd = System.getProperty("os.name").toLowerCase().contains("windows") ? "ndk-build.cmd" : "ndk-build"
         def jniSrcPath = "src/main/jni";
+        def compPath = new File("../../Components/todo/").getCanonicalPath()
         def ndkBuild = tasks.create(name: 'ndk' + buildTypeName + 'Build', type: Exec) {
             def debugFlag = (buildType.name == "debug") ? 1 : 0
             commandLine "$ndkDir/$ndkCmd",
                     "NDK_PROJECT_PATH=$jniSrcPath",
                     "APP_BUILD_SCRIPT=$jniSrcPath/Android.mk",
                     "NDK_APPLICATION_MK=$jniSrcPath/Application.mk",
-                    "NDK_DEBUG=$debugFlag"
+                    "NDK_DEBUG=$debugFlag",
+                    "COMPONENTS_PATH=$compPath"
         }
         tasks.getByPath('compile' + buildTypeName + 'JavaWithJavac').dependsOn ndkBuild
 
@@ -21,7 +23,8 @@ afterEvaluate {
                     'clean',
                     "NDK_PROJECT_PATH=$jniSrcPath",
                     "APP_BUILD_SCRIPT=$jniSrcPath/Android.mk",
-                    "NDK_APPLICATION_MK=$jniSrcPath/Application.mk"
+                    "NDK_APPLICATION_MK=$jniSrcPath/Application.mk",
+                    "COMPONENTS_PATH=$compPath"
         }
         tasks.getByPath('clean').dependsOn ndkClean
     }
