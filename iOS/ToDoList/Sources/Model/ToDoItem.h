@@ -1,13 +1,21 @@
-//
-//  ToDoItem.h
-//  ToDoList
-//
-//  Created by Alexey Komissarov on 23/12/15.
-//  Copyright © 2015 Kaspersky Lab. All rights reserved.
-//
-
 #import <Foundation/Foundation.h>
 
-@interface ToDoItem : NSObject
+
+@protocol ToDoItem <NSObject, NSCopying>
+
+@property (nonatomic, readonly, strong) NSString *identifier;
+@property (nonatomic, readonly, strong) NSString *title;
+@property (nonatomic, readonly, strong) NSString *text;
+@property (nonatomic, readonly, strong) NSDate *date;
+
+@end
+
+
+@interface ToDoItem : NSObject<ToDoItem>
+
+- (instancetype)initWithIdentifier:(NSString *)identifier
+                             title:(NSString *)title
+                              text:(NSString *)text
+                              date:(NSDate *)date NS_DESIGNATED_INITIALIZER;
 
 @end

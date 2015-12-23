@@ -1,13 +1,10 @@
-//
-//  NSString+Interop.h
-//  ToDoList
-//
-//  Created by Alexey Komissarov on 23/12/15.
-//  Copyright © 2015 Kaspersky Lab. All rights reserved.
-//
-
 #import <Foundation/Foundation.h>
+#include <todo/todo_item.h>
+
 
 @interface NSString (Interop)
+
++ (NSString *)stringWithToDoItemId:(todo_sample::TodoItemId)itemId;
+- (todo_sample::TodoItemId)todoItemId;
 
 @end

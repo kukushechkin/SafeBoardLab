@@ -1,13 +1,9 @@
-//
-//  ToDoItem+Interop.h
-//  ToDoList
-//
-//  Created by Alexey Komissarov on 23/12/15.
-//  Copyright © 2015 Kaspersky Lab. All rights reserved.
-//
-
 #import "ToDoItem.h"
+#include <todo/todo_item.h>
+
 
 @interface ToDoItem (Interop)
+
+- (instancetype)initWithToDoItemStruct:(const todo_sample::TodoItem &)todoItemStruct;
 
 @end
