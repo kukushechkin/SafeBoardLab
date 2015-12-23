@@ -17,6 +17,6 @@
 @property (retain) NSString * todoDescription;
 @property (retain) NSDate * todoDueDate;
 
-- (instancetype)initWithTitle:(NSString*)title andDescription:(NSString*)description;
+- (instancetype)initWithTitle:(NSString*)title dueDate:(NSDate*)date andDescription:(NSString*)description;
 
 @end

@@ -24,12 +24,50 @@
     return self;
 }
 
-- (NSArray*)todoItems {
-    NSMutableArray * ret = [NSMutableArray array];
-    for(const auto yai : m_todoManager.GetItems()) {
-        [ret addObject:[[SBTodoItem alloc] initWithTitle:[NSString stringWithFormat:@"%s", yai.title] andDescription:[NSString stringWithFormat:@"%s", yai.description]]];
+- (void)awakeFromNib {
+    [m_itemsArrayController addObserver:self
+                             forKeyPath:@"arrangedObjects.todoTitle"
+                                options:(NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld)
+                                context:NULL];
+    [m_itemsArrayController addObserver:self
+                             forKeyPath:@"arrangedObjects.todoDescription"
+                                options:(NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld)
+                                context:NULL];
+
+}
+
+- (void)observeValueForKeyPath:(NSString *)keyPath
+                      ofObject:(NSArrayController*)object
+                        change:(NSDictionary *)change
+                       context:(void *)context {
+    
+    SBTodoItem * selectedItem = [m_todoItems objectAtIndex:[object selectionIndex]];
+    auto rawItem = m_todoManager.GetItems()[[object selectionIndex]];
+
+    
+    if([keyPath isEqualToString:@"arrangedObjects.todoTitle"]) {
+        strncpy(rawItem.title, std::string('\0', 256).c_str(), 256);
+        strncpy(rawItem.title, [selectedItem.todoTitle UTF8String], selectedItem.todoTitle.length);
     }
-    return ret;
+    if([keyPath isEqualToString:@"arrangedObjects.todoDescription"]) {
+        strncpy(rawItem.description, std::string('\0', 1024).c_str(), 1024);
+        strncpy(rawItem.description, [selectedItem.todoDescription UTF8String], selectedItem.todoDescription.length);
+    }
+    
+    [self willChangeValueForKey:@"isAnyObjectWorkingStatus"];
+    m_todoManager.UpdateItem(rawItem);
+    [self didChangeValueForKey:@"isAnyObjectWorkingStatus"];
+}
+
+
+- (NSArray*)todoItems {
+    m_todoItems = [NSMutableArray array];
+    for(const auto yai : m_todoManager.GetItems()) {
+        [m_todoItems addObject:[[SBTodoItem alloc] initWithTitle:[NSString stringWithFormat:@"%s", yai.title]
+                                                 dueDate:[NSDate dateWithTimeIntervalSince1970:yai.dueDateUtc]
+                                          andDescription:[NSString stringWithFormat:@"%s", yai.description]]];
+    }
+    return m_todoItems;
 }
 
 - (void)createObject {

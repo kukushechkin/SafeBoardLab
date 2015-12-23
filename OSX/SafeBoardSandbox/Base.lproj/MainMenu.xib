@@ -1148,7 +1148,7 @@
                         </connections>
                     </textField>
                     <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nlr-4u-2dh">
-                        <rect key="frame" x="104" y="66" width="249" height="22"/>
+                        <rect key="frame" x="104" y="74" width="249" height="22"/>
                         <animations/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="CSK-sY-rHp">
                             <font key="font" metaFont="system"/>
@@ -1160,13 +1160,35 @@
                         </connections>
                     </textField>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AqU-yr-QkL">
-                        <rect key="frame" x="18" y="66" width="86" height="22"/>
+                        <rect key="frame" x="18" y="74" width="86" height="22"/>
                         <animations/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Description:" id="aFY-LG-fyo">
                             <font key="font" metaFont="system"/>
                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
+                    </textField>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4qC-nm-hj3">
+                        <rect key="frame" x="18" y="42" width="86" height="22"/>
+                        <animations/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Due date:" id="dvD-AS-AkT">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ucs-kn-j22">
+                        <rect key="frame" x="104" y="42" width="96" height="22"/>
+                        <animations/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" enabled="NO" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="kOJ-NZ-Gmt">
+                            <dateFormatter key="formatter" dateStyle="short" id="tq3-CE-AVf"/>
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                        <connections>
+                            <binding destination="1pB-Tj-LzH" name="value" keyPath="selection.todoDueDate" id="myC-YB-cuO"/>
+                        </connections>
                     </textField>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yAN-37-0cR">
                         <rect key="frame" x="18" y="109" width="35" height="17"/>
@@ -1195,7 +1217,11 @@
             </connections>
         </arrayController>
         <customObject id="pvb-ha-qCy" customClass="SBTodoItemsMainViewController"/>
-        <customObject id="Nzg-fR-HcK" customClass="SBTodoManager"/>
+        <customObject id="Nzg-fR-HcK" customClass="SBTodoManager">
+            <connections>
+                <outlet property="m_itemsArrayController" destination="1pB-Tj-LzH" id="3XU-hj-Rm7"/>
+            </connections>
+        </customObject>
     </objects>
     <resources>
         <image name="NSAddTemplate" width="11" height="11"/>

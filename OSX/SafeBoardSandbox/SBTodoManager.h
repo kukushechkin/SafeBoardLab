@@ -7,10 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <Cocoa/Cocoa.h>
 
 @interface SBTodoManager : NSObject
 {
-    NSArray * m_todoItems;
+    NSMutableArray * m_todoItems;
+    IBOutlet NSArrayController * m_itemsArrayController;
 }
 
 @property (nonatomic, readonly) NSArray * todoItems;
