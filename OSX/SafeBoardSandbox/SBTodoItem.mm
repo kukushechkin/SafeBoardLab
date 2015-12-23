@@ -19,10 +19,11 @@
     return self;
 }
 
-- (instancetype)initWithTitle:(NSString*)title andDescription:(NSString*)description {
+- (instancetype)initWithTitle:(NSString*)title dueDate:(NSDate*)date andDescription:(NSString*)description {
     if(self = [super init]) {
         self.todoTitle = title;
         self.todoDescription = description;
+        self.todoDueDate = date;
     }
     return self;
 }
