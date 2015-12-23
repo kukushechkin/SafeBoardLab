@@ -32,7 +32,7 @@
     dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
     dispatch_async(queue, ^{
         if(m_todoManager.Connect()) {
-           // TODO:
+           // TODO: Anything useful to do on connect?
         }
         dispatch_async(dispatch_get_main_queue(), ^{
             self.isConnecting = NO;
@@ -80,9 +80,9 @@
     m_todoItems = [NSMutableArray array];
     for(const auto yai : m_todoManager.GetItems()) {
         [m_todoItems addObject:[[SBTodoItem alloc] initWithTitle:[NSString stringWithFormat:@"%s", yai.title]
-                                                      id:yai.id
-                                                 dueDate:[NSDate dateWithTimeIntervalSince1970:yai.dueDateUtc]
-                                          andDescription:[NSString stringWithFormat:@"%s", yai.description]]];
+                                                              id:yai.id
+                                                         dueDate:[NSDate dateWithTimeIntervalSince1970:yai.dueDateUtc]
+                                                  andDescription:[NSString stringWithFormat:@"%s", yai.description]]];
     }
     return m_todoItems;
 }
