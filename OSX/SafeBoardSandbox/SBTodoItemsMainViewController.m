@@ -9,14 +9,12 @@
 #import "SBTodoItemsMainViewController.h"
 
 @interface SBTodoItemsMainViewController ()
-    @property (nonatomic, strong) SBTodoManager * todoManager;
 @end
 
 @implementation SBTodoItemsMainViewController
 
-- (void)awakeFromNib {
-    self.todoManager = [SBTodoManager new];
-}
+//- (void)awakeFromNib {
+//}
 
 - (void)viewDidLoad {
     [super viewDidLoad];

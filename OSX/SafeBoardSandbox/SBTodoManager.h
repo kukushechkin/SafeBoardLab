@@ -7,13 +7,15 @@
 //
 
 #import <Foundation/Foundation.h>
-#include "todo_manager.h"
 
 @interface SBTodoManager : NSObject
 {
-    todo_sample::TodoManager m_todoManager;
+    NSArray * m_todoItems;
 }
 
-@property (nonatomic, retain) NSArray * todoItems;
+@property (nonatomic, readonly) NSArray * todoItems;
+
+- (void)createObject;
+- (void)removeObjectsAtIndex:(NSInteger)index;
 
 @end

@@ -7,15 +7,16 @@
 //
 
 #import <Foundation/Foundation.h>
-#include "todo_item.h"
 
 @interface SBTodoItem : NSObject
 {
 }
 
-@property (assign) todo_sample::TodoItemId totoId;
+@property (assign) NSInteger totoId;
 @property (retain) NSString * todoTitle;
 @property (retain) NSString * todoDescription;
 @property (retain) NSDate * todoDueDate;
+
+- (instancetype)initWithTitle:(NSString*)title andDescription:(NSString*)description;
 
 @end

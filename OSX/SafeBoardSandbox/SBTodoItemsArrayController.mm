@@ -10,12 +10,15 @@
 
 @implementation SBTodoItemsArrayController
 
+//- (void)awakeFromNib {
+//}
+
 - (IBAction)add:(id)sender {
-    [super add:sender];
+    [m_manager createObject];
 }
 
 - (IBAction)remove:(id)sender {
-    [super remove:sender];
+    [m_manager removeObjectsAtIndex:self.selectionIndex];
 }
 
 @end

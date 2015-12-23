@@ -13,6 +13,4 @@
 {
 }
 
-@property (readonly, strong) SBTodoManager * todoManager;
-
 @end
