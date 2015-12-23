@@ -18,8 +18,7 @@ void Notify(ItemModifiedCallback* callback, const TodoItemId& id)
 {
 	if (callback)
 	{
-		using namespace std::literals;
-		std::this_thread::sleep_for(1s);
+		std::this_thread::sleep_for(std::chrono::milliseconds(500));
 		std::thread(callback, id);
 	}
 }
@@ -38,11 +37,9 @@ TodoManager::~TodoManager()
 
 bool TodoManager::Connect()
 {
-	using namespace std::literals;
-
 	LockGuard lock(m_mutex);
 	m_isConnected = true;
-	std::this_thread::sleep_for(2s);
+	std::this_thread::sleep_for(std::chrono::seconds(2));
 	return m_isConnected;
 }
 
