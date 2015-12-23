@@ -1,5 +1,4 @@
 #pragma once
-#include "todo_exports.h"
 #include "todo_item.h"
 #include <vector>
 #include <mutex>
@@ -10,7 +9,7 @@ namespace todo_sample
 typedef std::vector<TodoItem> TodoItemsCollection;
 typedef void ItemModifiedCallback(const TodoItemId& id);
 
-class TODO_API TodoManager
+class TodoManager
 {
 public:
 	TodoManager();

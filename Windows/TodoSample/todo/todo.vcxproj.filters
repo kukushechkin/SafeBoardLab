@@ -23,9 +23,6 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\..\Components\todo\include\todo\todo_exports.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\..\Components\todo\include\todo\todo_item.h">
       <Filter>Header Files</Filter>
     </ClInclude>
