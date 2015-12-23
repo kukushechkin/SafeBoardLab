@@ -7,7 +7,7 @@
 //
 
 #import "SBTodoManager.h"
-#import "SBTodoItem.h"
+#import "SBTodoItem.hpp"
 #import "todo_manager.h"
 
 @interface SBTodoManager()
@@ -43,7 +43,6 @@
     
     SBTodoItem * selectedItem = [m_todoItems objectAtIndex:[object selectionIndex]];
     auto rawItem = m_todoManager.GetItems()[[object selectionIndex]];
-
     
     if([keyPath isEqualToString:@"arrangedObjects.todoTitle"]) {
         strncpy(rawItem.title, std::string('\0', 256).c_str(), 256);

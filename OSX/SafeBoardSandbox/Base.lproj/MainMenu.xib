@@ -1090,6 +1090,7 @@
                                     </tableColumns>
                                     <connections>
                                         <binding destination="1pB-Tj-LzH" name="content" keyPath="arrangedObjects" id="UwF-4w-4iI"/>
+                                        <binding destination="1pB-Tj-LzH" name="selectionIndexes" keyPath="selectionIndexes" previousBinding="UwF-4w-4iI" id="KFj-uG-bOX"/>
                                     </connections>
                                 </tableView>
                             </subviews>

@@ -6,8 +6,7 @@
 //  Copyright © 2015 Vladimir Kukushkin. All rights reserved.
 //
 
-#import "SBTodoItem.h"
-#import "todo_item.h"
+#import "SBTodoItem.hpp"
 
 @implementation SBTodoItem
 

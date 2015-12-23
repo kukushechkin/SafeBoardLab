@@ -25,7 +25,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		7439B5C71C2AA9BB008A8D41 /* SBTodoItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBTodoItem.h; sourceTree = "<group>"; };
+		7439B5C71C2AA9BB008A8D41 /* SBTodoItem.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = SBTodoItem.hpp; sourceTree = "<group>"; };
 		7439B5C81C2AA9BB008A8D41 /* SBTodoItem.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SBTodoItem.mm; sourceTree = "<group>"; };
 		7439B5CA1C2AAA2E008A8D41 /* SBTodoManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBTodoManager.h; sourceTree = "<group>"; };
 		7439B5CB1C2AAA2E008A8D41 /* SBTodoManager.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SBTodoManager.mm; sourceTree = "<group>"; };
@@ -84,7 +84,7 @@
 		7439B5C61C2AA851008A8D41 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				7439B5C71C2AA9BB008A8D41 /* SBTodoItem.h */,
+				7439B5C71C2AA9BB008A8D41 /* SBTodoItem.hpp */,
 				7439B5C81C2AA9BB008A8D41 /* SBTodoItem.mm */,
 				7439B5CA1C2AAA2E008A8D41 /* SBTodoManager.h */,
 				7439B5CB1C2AAA2E008A8D41 /* SBTodoManager.mm */,

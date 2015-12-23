@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "todo_item.h"
 
 @interface SBTodoItem : NSObject
 {
