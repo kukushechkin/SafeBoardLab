@@ -4,6 +4,7 @@
 #include <thread>
 #include <chrono>
 
+
 typedef std::lock_guard<std::mutex> LockGuard;
 
 namespace todo_sample
@@ -81,11 +82,11 @@ TodoItem TodoManager::CreateItem()
 	LockGuard lock(m_mutex);
 	TodoItem item = {0};
 	item.id = m_todoItems.size();
-	strlcpy(item.title, "New todo item", MaxTitle);
-	strlcpy(item.description, "Fill me", MaxDescription);
+	strncpy_s(item.title, MaxTitle, "New todo item", MaxTitle);
+	strncpy_s(item.description, MaxDescription, "Fill me", MaxDescription);
 
 	auto now = std::chrono::system_clock::now();
-	item.dueDateUtc = std::chrono::system_clock::to_time_t(now - std::chrono::hours(24));
+	item.dueDateUtc = std::chrono::system_clock::to_time_t(now + std::chrono::hours(24));
 
 	m_todoItems.push_back(item);
 
@@ -100,8 +101,8 @@ bool TodoManager::UpdateItem(const TodoItem& item)
 	auto itemInCollection = FindItemById(item.id);
 	if (itemInCollection != std::end(m_todoItems))
 	{
-		strlcpy(itemInCollection->title, item.title, MaxTitle);
-		strlcpy(itemInCollection->description, item.description, MaxDescription);
+		strncpy_s(itemInCollection->title, MaxTitle, item.title, MaxTitle);
+		strncpy_s(itemInCollection->description, MaxDescription, item.description, MaxDescription);
 		itemInCollection->dueDateUtc = item.dueDateUtc;
 
 		Notify(m_updatedCallback, item.id);
