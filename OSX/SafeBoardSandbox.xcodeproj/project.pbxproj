@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7439B5C91C2AA9BB008A8D41 /* SBTodoItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 7439B5C81C2AA9BB008A8D41 /* SBTodoItem.m */; };
+		7439B5CC1C2AAA2E008A8D41 /* SBTodoManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7439B5CB1C2AAA2E008A8D41 /* SBTodoManager.m */; };
+		7439B5CF1C2AACCD008A8D41 /* SBTodoItemsArrayController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7439B5CE1C2AACCD008A8D41 /* SBTodoItemsArrayController.m */; };
+		7439B5D21C2AADEB008A8D41 /* SBTodoItemsMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7439B5D11C2AADEB008A8D41 /* SBTodoItemsMainViewController.m */; };
 		747D0C891C29B0970001FD42 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 747D0C881C29B0970001FD42 /* AppDelegate.m */; };
 		747D0C8C1C29B0970001FD42 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 747D0C8B1C29B0970001FD42 /* main.m */; };
 		747D0C8E1C29B0970001FD42 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 747D0C8D1C29B0970001FD42 /* Assets.xcassets */; };
@@ -19,6 +23,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7439B5C71C2AA9BB008A8D41 /* SBTodoItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBTodoItem.h; sourceTree = "<group>"; };
+		7439B5C81C2AA9BB008A8D41 /* SBTodoItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBTodoItem.m; sourceTree = "<group>"; };
+		7439B5CA1C2AAA2E008A8D41 /* SBTodoManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBTodoManager.h; sourceTree = "<group>"; };
+		7439B5CB1C2AAA2E008A8D41 /* SBTodoManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBTodoManager.m; sourceTree = "<group>"; };
+		7439B5CD1C2AACCD008A8D41 /* SBTodoItemsArrayController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBTodoItemsArrayController.h; sourceTree = "<group>"; };
+		7439B5CE1C2AACCD008A8D41 /* SBTodoItemsArrayController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBTodoItemsArrayController.m; sourceTree = "<group>"; };
+		7439B5D01C2AADEB008A8D41 /* SBTodoItemsMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBTodoItemsMainViewController.h; sourceTree = "<group>"; };
+		7439B5D11C2AADEB008A8D41 /* SBTodoItemsMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBTodoItemsMainViewController.m; sourceTree = "<group>"; };
 		747D0C841C29B0970001FD42 /* SafeBoardSandbox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SafeBoardSandbox.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		747D0C871C29B0970001FD42 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		747D0C881C29B0970001FD42 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -54,6 +66,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7439B5C61C2AA851008A8D41 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				7439B5C71C2AA9BB008A8D41 /* SBTodoItem.h */,
+				7439B5C81C2AA9BB008A8D41 /* SBTodoItem.m */,
+				7439B5CA1C2AAA2E008A8D41 /* SBTodoManager.h */,
+				7439B5CB1C2AAA2E008A8D41 /* SBTodoManager.m */,
+				7439B5CD1C2AACCD008A8D41 /* SBTodoItemsArrayController.h */,
+				7439B5CE1C2AACCD008A8D41 /* SBTodoItemsArrayController.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		747D0C7B1C29B0960001FD42 = {
 			isa = PBXGroup;
 			children = (
@@ -75,6 +100,7 @@
 		747D0C861C29B0970001FD42 /* SafeBoardSandbox */ = {
 			isa = PBXGroup;
 			children = (
+				7439B5C61C2AA851008A8D41 /* Model */,
 				747D0C871C29B0970001FD42 /* AppDelegate.h */,
 				747D0C881C29B0970001FD42 /* AppDelegate.m */,
 				747D0C8D1C29B0970001FD42 /* Assets.xcassets */,
@@ -85,6 +111,8 @@
 				747D0C991C29B17B0001FD42 /* SBMainViewController.m */,
 				747D0C9B1C29B3070001FD42 /* SBTheObject.h */,
 				747D0C9C1C29B3070001FD42 /* SBTheObject.mm */,
+				7439B5D01C2AADEB008A8D41 /* SBTodoItemsMainViewController.h */,
+				7439B5D11C2AADEB008A8D41 /* SBTodoItemsMainViewController.m */,
 			);
 			path = SafeBoardSandbox;
 			sourceTree = "<group>";
@@ -207,9 +235,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7439B5CC1C2AAA2E008A8D41 /* SBTodoManager.m in Sources */,
 				747D0C8C1C29B0970001FD42 /* main.m in Sources */,
 				747D0C9D1C29B3070001FD42 /* SBTheObject.mm in Sources */,
+				7439B5D21C2AADEB008A8D41 /* SBTodoItemsMainViewController.m in Sources */,
+				7439B5CF1C2AACCD008A8D41 /* SBTodoItemsArrayController.m in Sources */,
 				747D0C891C29B0970001FD42 /* AppDelegate.m in Sources */,
+				7439B5C91C2AA9BB008A8D41 /* SBTodoItem.m in Sources */,
 				747D0C9A1C29B17B0001FD42 /* SBMainViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -320,7 +352,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
-				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/UsefulStuff\"";
+				HEADER_SEARCH_PATHS = (
+					"\"$(SRCROOT)/UsefulStuff\"",
+					"$(SRCROOT)",
+				);
 				INFOPLIST_FILE = SafeBoardSandbox/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.kaspersky.SafeBoardSandbox;
@@ -333,7 +368,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
-				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/UsefulStuff\"";
+				HEADER_SEARCH_PATHS = (
+					"\"$(SRCROOT)/UsefulStuff\"",
+					"$(SRCROOT)",
+				);
 				INFOPLIST_FILE = SafeBoardSandbox/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.kaspersky.SafeBoardSandbox;
@@ -388,6 +426,7 @@
 				747D0C971C29B0970001FD42 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		747D0CAD1C29E5090001FD42 /* Build configuration list for PBXNativeTarget "UsefulStuff" */ = {
 			isa = XCConfigurationList;
@@ -396,6 +435,7 @@
 				747D0CAF1C29E5090001FD42 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
