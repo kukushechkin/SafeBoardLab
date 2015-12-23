@@ -735,7 +735,7 @@
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
                                 <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnReordering="NO" columnResizing="NO" multipleSelection="NO" autosaveColumns="NO" rowHeight="43" rowSizeStyle="automatic" viewBased="YES" id="reC-iC-j46">
-                                    <rect key="frame" x="0.0" y="0.0" width="172" height="327"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="172" height="0.0"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <animations/>
                                     <size key="intercellSpacing" width="3" height="2"/>
@@ -759,7 +759,7 @@
                                                     <rect key="frame" x="1" y="1" width="169" height="43"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <subviews>
-                                                        <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2Fq-n5-ufc">
+                                                        <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="2Fq-n5-ufc">
                                                             <rect key="frame" x="0.0" y="3" width="168" height="40"/>
                                                             <animations/>
                                                             <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="Table View Cell" id="vgj-wd-e4G">
@@ -867,12 +867,12 @@
                                     <rect key="frame" x="176" y="150" width="16" height="16"/>
                                     <animations/>
                                     <connections>
-                                        <binding destination="25o-Y3-bZ8" name="animate" keyPath="selection.isWorkInProgress" id="sDH-EA-g2T"/>
                                         <binding destination="25o-Y3-bZ8" name="hidden" keyPath="selection.isWorkInProgress" id="OMo-yg-6HT">
                                             <dictionary key="options">
                                                 <string key="NSValueTransformerName">NSNegateBoolean</string>
                                             </dictionary>
                                         </binding>
+                                        <binding destination="25o-Y3-bZ8" name="animate" keyPath="selection.isWorkInProgress" id="sDH-EA-g2T"/>
                                     </connections>
                                 </progressIndicator>
                                 <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="OqS-JL-meI">
@@ -883,14 +883,14 @@
                                         <font key="font" metaFont="system"/>
                                     </buttonCell>
                                     <connections>
-                                        <binding destination="25o-Y3-bZ8" name="enabled" keyPath="selection.isWorkInProgress" id="r5b-tx-EQi">
-                                            <dictionary key="options">
-                                                <string key="NSValueTransformerName">NSNegateBoolean</string>
-                                            </dictionary>
-                                        </binding>
                                         <binding destination="25o-Y3-bZ8" name="target" keyPath="selection" id="Cai-cs-bNI">
                                             <dictionary key="options">
                                                 <string key="NSSelectorName">doWork</string>
+                                            </dictionary>
+                                        </binding>
+                                        <binding destination="25o-Y3-bZ8" name="enabled" keyPath="selection.isWorkInProgress" id="r5b-tx-EQi">
+                                            <dictionary key="options">
+                                                <string key="NSValueTransformerName">NSNegateBoolean</string>
                                             </dictionary>
                                         </binding>
                                     </connections>
@@ -915,7 +915,6 @@
                         <animations/>
                         <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
                         <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                        <font key="titleFont" metaFont="smallSystem"/>
                         <connections>
                             <binding destination="25o-Y3-bZ8" name="hidden" keyPath="selection.self" id="RSB-8F-mai">
                                 <dictionary key="options">
@@ -974,7 +973,7 @@
                 </constraints>
                 <animations/>
             </view>
-            <point key="canvasLocation" x="270" y="147"/>
+            <point key="canvasLocation" x="557" y="290"/>
         </window>
         <customObject id="gp5-ya-kmf" customClass="SBMainViewController">
             <connections>
