@@ -63,6 +63,7 @@
     m_todoItems = [NSMutableArray array];
     for(const auto yai : m_todoManager.GetItems()) {
         [m_todoItems addObject:[[SBTodoItem alloc] initWithTitle:[NSString stringWithFormat:@"%s", yai.title]
+                                                      id:yai.id
                                                  dueDate:[NSDate dateWithTimeIntervalSince1970:yai.dueDateUtc]
                                           andDescription:[NSString stringWithFormat:@"%s", yai.description]]];
     }

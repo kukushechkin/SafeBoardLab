@@ -18,11 +18,12 @@
     return self;
 }
 
-- (instancetype)initWithTitle:(NSString*)title dueDate:(NSDate*)date andDescription:(NSString*)description {
+- (instancetype)initWithTitle:(NSString*)title id:(todo_sample::TodoItemId)newId dueDate:(NSDate*)date andDescription:(NSString*)description {
     if(self = [super init]) {
         self.todoTitle = title;
         self.todoDescription = description;
         self.todoDueDate = date;
+        self.todoId = newId;
     }
     return self;
 }
