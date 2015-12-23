@@ -82,8 +82,8 @@ TodoItem TodoManager::CreateItem()
 	LockGuard lock(m_mutex);
 	TodoItem item = {0};
 	item.id = m_todoItems.size();
-	strncpy_s(item.title, MaxTitle, "New todo item", MaxTitle);
-	strncpy_s(item.description, MaxDescription, "Fill me", MaxDescription);
+	strncpy(item.title, "New todo item", MaxTitle);
+	strncpy(item.description, "Fill me", MaxDescription);
 
 	auto now = std::chrono::system_clock::now();
 	item.dueDateUtc = std::chrono::system_clock::to_time_t(now + std::chrono::hours(24));
@@ -101,8 +101,8 @@ bool TodoManager::UpdateItem(const TodoItem& item)
 	auto itemInCollection = FindItemById(item.id);
 	if (itemInCollection != std::end(m_todoItems))
 	{
-		strncpy_s(itemInCollection->title, MaxTitle, item.title, MaxTitle);
-		strncpy_s(itemInCollection->description, MaxDescription, item.description, MaxDescription);
+		strncpy(itemInCollection->title, item.title, MaxTitle);
+		strncpy(itemInCollection->description, item.description, MaxDescription);
 		itemInCollection->dueDateUtc = item.dueDateUtc;
 
 		Notify(m_updatedCallback, item.id);
