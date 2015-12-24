@@ -10,7 +10,9 @@
 
 - (BOOL)connect;
 - (void)asyncConnectWithCompletionHandler:(void (^)(BOOL success))completionHandler;
+- (void)disconnect;
 
 - (NSArray<id<ToDoItem>> *)items;
+- (void)addItem:(id<ToDoItem>)item;
 
 @end

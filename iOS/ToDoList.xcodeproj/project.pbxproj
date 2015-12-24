@@ -17,8 +17,10 @@
 		DE19F4C01C2AAE5C00A7E471 /* ToDoItem.m in Sources */ = {isa = PBXBuildFile; fileRef = DE19F4BF1C2AAE5C00A7E471 /* ToDoItem.m */; };
 		DE19F4C51C2ABC5600A7E471 /* NSString+Interop.mm in Sources */ = {isa = PBXBuildFile; fileRef = DE19F4C41C2ABC5600A7E471 /* NSString+Interop.mm */; };
 		DE19F4C81C2ABC6A00A7E471 /* ToDoItem+Interop.mm in Sources */ = {isa = PBXBuildFile; fileRef = DE19F4C71C2ABC6A00A7E471 /* ToDoItem+Interop.mm */; };
-		DE19F4F11C2AC11100A7E471 /* todo_manager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DE19F4F01C2AC11100A7E471 /* todo_manager.cpp */; };
 		DE19F4F41C2AC15A00A7E471 /* libtodo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DE19F4E21C2AC07800A7E471 /* libtodo.a */; };
+		DE569A4B1C2AF29900D77344 /* todo_manager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DE569A4A1C2AF29900D77344 /* todo_manager.cpp */; };
+		DE849CB51C2ACD6200076F9D /* ToDoItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DE849CB41C2ACD6200076F9D /* ToDoItemCell.m */; };
+		DE849CBE1C2AFA9000076F9D /* NSDate+Equality.m in Sources */ = {isa = PBXBuildFile; fileRef = DE849CBD1C2AFA9000076F9D /* NSDate+Equality.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,10 +66,14 @@
 		DE19F4C61C2ABC6A00A7E471 /* ToDoItem+Interop.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ToDoItem+Interop.h"; sourceTree = "<group>"; };
 		DE19F4C71C2ABC6A00A7E471 /* ToDoItem+Interop.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "ToDoItem+Interop.mm"; sourceTree = "<group>"; };
 		DE19F4E21C2AC07800A7E471 /* libtodo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libtodo.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		DE19F4F01C2AC11100A7E471 /* todo_manager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = todo_manager.cpp; sourceTree = "<group>"; };
-		DE19F4F71C2AC1D000A7E471 /* todo_exports.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = todo_exports.h; sourceTree = "<group>"; };
-		DE19F4F81C2AC1D000A7E471 /* todo_item.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = todo_item.h; sourceTree = "<group>"; };
-		DE19F4F91C2AC1D000A7E471 /* todo_manager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = todo_manager.h; sourceTree = "<group>"; };
+		DE569A461C2AF29900D77344 /* todo_exports.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = todo_exports.h; sourceTree = "<group>"; };
+		DE569A471C2AF29900D77344 /* todo_item.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = todo_item.h; sourceTree = "<group>"; };
+		DE569A481C2AF29900D77344 /* todo_manager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = todo_manager.h; sourceTree = "<group>"; };
+		DE569A4A1C2AF29900D77344 /* todo_manager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = todo_manager.cpp; sourceTree = "<group>"; };
+		DE849CB31C2ACD6200076F9D /* ToDoItemCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToDoItemCell.h; sourceTree = "<group>"; };
+		DE849CB41C2ACD6200076F9D /* ToDoItemCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToDoItemCell.m; sourceTree = "<group>"; };
+		DE849CBC1C2AFA9000076F9D /* NSDate+Equality.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Equality.h"; sourceTree = "<group>"; };
+		DE849CBD1C2AFA9000076F9D /* NSDate+Equality.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Equality.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,6 +154,8 @@
 		DE182E1B1C2AAC0000CB590E /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				DE849CB31C2ACD6200076F9D /* ToDoItemCell.h */,
+				DE849CB41C2ACD6200076F9D /* ToDoItemCell.m */,
 				DE182E1C1C2AAC0000CB590E /* ToDoTableViewController.h */,
 				DE182E1D1C2AAC0000CB590E /* ToDoTableViewController.m */,
 			);
@@ -161,6 +169,8 @@
 				DE19F4C41C2ABC5600A7E471 /* NSString+Interop.mm */,
 				DE19F4C61C2ABC6A00A7E471 /* ToDoItem+Interop.h */,
 				DE19F4C71C2ABC6A00A7E471 /* ToDoItem+Interop.mm */,
+				DE849CBC1C2AFA9000076F9D /* NSDate+Equality.h */,
+				DE849CBD1C2AFA9000076F9D /* NSDate+Equality.m */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -168,38 +178,38 @@
 		DE19F4E31C2AC07800A7E471 /* LibToDo */ = {
 			isa = PBXGroup;
 			children = (
-				DE19F4F51C2AC1D000A7E471 /* include */,
-				DE19F4EF1C2AC11100A7E471 /* src */,
+				DE569A441C2AF29900D77344 /* include */,
+				DE569A491C2AF29900D77344 /* src */,
 			);
 			path = LibToDo;
 			sourceTree = "<group>";
 		};
-		DE19F4EF1C2AC11100A7E471 /* src */ = {
+		DE569A441C2AF29900D77344 /* include */ = {
 			isa = PBXGroup;
 			children = (
-				DE19F4F01C2AC11100A7E471 /* todo_manager.cpp */,
-			);
-			name = src;
-			path = ../../Components/todo/src;
-			sourceTree = "<group>";
-		};
-		DE19F4F51C2AC1D000A7E471 /* include */ = {
-			isa = PBXGroup;
-			children = (
-				DE19F4F61C2AC1D000A7E471 /* todo */,
+				DE569A451C2AF29900D77344 /* todo */,
 			);
 			name = include;
 			path = ../../Components/todo/include;
 			sourceTree = "<group>";
 		};
-		DE19F4F61C2AC1D000A7E471 /* todo */ = {
+		DE569A451C2AF29900D77344 /* todo */ = {
 			isa = PBXGroup;
 			children = (
-				DE19F4F71C2AC1D000A7E471 /* todo_exports.h */,
-				DE19F4F81C2AC1D000A7E471 /* todo_item.h */,
-				DE19F4F91C2AC1D000A7E471 /* todo_manager.h */,
+				DE569A461C2AF29900D77344 /* todo_exports.h */,
+				DE569A471C2AF29900D77344 /* todo_item.h */,
+				DE569A481C2AF29900D77344 /* todo_manager.h */,
 			);
 			path = todo;
+			sourceTree = "<group>";
+		};
+		DE569A491C2AF29900D77344 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				DE569A4A1C2AF29900D77344 /* todo_manager.cpp */,
+			);
+			name = src;
+			path = ../../Components/todo/src;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -297,9 +307,11 @@
 				DE182E201C2AAC0000CB590E /* ToDoTableViewController.m in Sources */,
 				DE19F4C01C2AAE5C00A7E471 /* ToDoItem.m in Sources */,
 				DE19F4BD1C2AAE3D00A7E471 /* ToDoManager.mm in Sources */,
+				DE849CBE1C2AFA9000076F9D /* NSDate+Equality.m in Sources */,
 				DE19F4C51C2ABC5600A7E471 /* NSString+Interop.mm in Sources */,
 				DE182E1F1C2AAC0000CB590E /* main.m in Sources */,
 				DE182E1E1C2AAC0000CB590E /* AppDelegate.m in Sources */,
+				DE849CB51C2ACD6200076F9D /* ToDoItemCell.m in Sources */,
 				DE19F4C81C2ABC6A00A7E471 /* ToDoItem+Interop.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -308,7 +320,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DE19F4F11C2AC11100A7E471 /* todo_manager.cpp in Sources */,
+				DE569A4B1C2AF29900D77344 /* todo_manager.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -380,7 +392,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -418,7 +430,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -496,6 +508,7 @@
 				DE19F4EA1C2AC07800A7E471 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
