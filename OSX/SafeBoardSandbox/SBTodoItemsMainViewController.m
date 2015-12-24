@@ -13,9 +13,6 @@
 
 @implementation SBTodoItemsMainViewController
 
-//- (void)awakeFromNib {
-//}
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do view setup here.

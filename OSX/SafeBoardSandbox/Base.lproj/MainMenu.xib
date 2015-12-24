@@ -706,7 +706,7 @@
                             <font key="font" metaFont="system"/>
                         </buttonCell>
                         <connections>
-                            <action selector="remove:" target="1pB-Tj-LzH" id="brr-d5-6Tb"/>
+                            <action selector="remove:" target="1pB-Tj-LzH" id="sLe-QS-3Cg"/>
                             <binding destination="1pB-Tj-LzH" name="enabled2" keyPath="arrangedObjects.@count" previousBinding="9HQ-ZJ-cdn" id="bHq-lS-jiV">
                                 <dictionary key="options">
                                     <integer key="NSMultipleValuesPlaceholder" value="-1"/>
@@ -730,8 +730,8 @@
                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                         <connections>
-                            <binding destination="Nzg-fR-HcK" name="enabled" keyPath="self.isConnected" id="tPx-Oz-AYc"/>
                             <binding destination="1pB-Tj-LzH" name="value" keyPath="selection.todoTitle" id="1Qq-mb-NWC"/>
+                            <binding destination="Nzg-fR-HcK" name="enabled" keyPath="self.isConnected" id="tPx-Oz-AYc"/>
                         </connections>
                     </textField>
                     <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="nlr-4u-2dh">
@@ -743,8 +743,8 @@
                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                         <connections>
-                            <binding destination="Nzg-fR-HcK" name="enabled" keyPath="self.isConnected" id="7Qr-Jw-5tQ"/>
                             <binding destination="1pB-Tj-LzH" name="value" keyPath="selection.todoDescription" id="11G-MQ-KUe"/>
+                            <binding destination="Nzg-fR-HcK" name="enabled" keyPath="self.isConnected" id="7Qr-Jw-5tQ"/>
                         </connections>
                     </textField>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="AqU-yr-QkL">
@@ -807,7 +807,7 @@
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
                                 <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" alternatingRowBackgroundColors="YES" columnReordering="NO" columnResizing="NO" multipleSelection="NO" autosaveColumns="NO" rowHeight="50" rowSizeStyle="automatic" viewBased="YES" id="nSJ-l6-gnt">
-                                    <rect key="frame" x="0.0" y="0.0" width="539" height="325"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="539" height="0.0"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <animations/>
                                     <size key="intercellSpacing" width="3" height="2"/>
@@ -951,8 +951,8 @@
                                     </tableColumns>
                                     <connections>
                                         <binding destination="1pB-Tj-LzH" name="content" keyPath="arrangedObjects" id="UwF-4w-4iI"/>
-                                        <binding destination="Nzg-fR-HcK" name="enabled" keyPath="self.isConnected" id="KOw-hX-ONH"/>
                                         <binding destination="1pB-Tj-LzH" name="selectionIndexes" keyPath="selectionIndexes" previousBinding="UwF-4w-4iI" id="KFj-uG-bOX"/>
+                                        <binding destination="Nzg-fR-HcK" name="enabled" keyPath="self.isConnected" id="KOw-hX-ONH"/>
                                     </connections>
                                 </tableView>
                             </subviews>
@@ -1043,7 +1043,7 @@
                 </constraints>
                 <animations/>
             </view>
-            <point key="canvasLocation" x="278.5" y="919"/>
+            <point key="canvasLocation" x="212.5" y="888"/>
         </window>
         <arrayController objectClassName="SBTodoItem" id="1pB-Tj-LzH" customClass="SBTodoItemsArrayController">
             <declaredKeys>
@@ -1060,7 +1060,7 @@
         <customObject id="pvb-ha-qCy" customClass="SBTodoItemsMainViewController"/>
         <customObject id="Nzg-fR-HcK" userLabel="Todo Items Manager" customClass="SBTodoManager">
             <connections>
-                <outlet property="m_itemsArrayController" destination="1pB-Tj-LzH" id="3XU-hj-Rm7"/>
+                <outlet property="m_itemsArrayController" destination="1pB-Tj-LzH" id="KdQ-7Y-VZZ"/>
             </connections>
         </customObject>
     </objects>
