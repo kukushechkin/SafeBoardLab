@@ -27,21 +27,9 @@
     return self;
 }
 
-- (IBAction)connect:(id)sender {
-    self.isConnecting = YES;
-    dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
-    dispatch_async(queue, ^{
-        if(m_todoManager.Connect()) {
-           // TODO: Anything useful to do on connect?
-        }
-        dispatch_async(dispatch_get_main_queue(), ^{
-            self.isConnecting = NO;
-            self.isConnected = YES;
-        });
-    });
-}
-
 - (void)awakeFromNib {
+    
+    
     [m_itemsArrayController addObserver:self
                              forKeyPath:@"arrangedObjects.todoTitle"
                                 options:(NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld)
@@ -50,13 +38,31 @@
                              forKeyPath:@"arrangedObjects.todoDescription"
                                 options:(NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld)
                                 context:NULL];
-
+    [m_itemsArrayController addObserver:self
+                             forKeyPath:@"arrangedObjects.todoDueDate"
+                                options:(NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld)
+                                context:NULL];
+    
+    self.isConnecting = YES;
+    dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+    dispatch_async(queue, ^{
+        if(m_todoManager.Connect()) {
+            // TODO: Anything useful to do on connect?
+        }
+        dispatch_async(dispatch_get_main_queue(), ^{
+            self.isConnecting = NO;
+            self.isConnected = YES;
+        });
+    });
 }
 
 - (void)observeValueForKeyPath:(NSString *)keyPath
                       ofObject:(NSArrayController*)object
                         change:(NSDictionary *)change
                        context:(void *)context {
+    
+    if(m_todoItems.count <= 0)
+        return;
     
     SBTodoItem * selectedItem = [m_todoItems objectAtIndex:[object selectionIndex]];
     auto rawItem = m_todoManager.GetItems()[[object selectionIndex]];
@@ -68,6 +74,9 @@
     if([keyPath isEqualToString:@"arrangedObjects.todoDescription"]) {
         strncpy(rawItem.description, std::string(1024, '\0').c_str(), 1024);
         strncpy(rawItem.description, [selectedItem.todoDescription UTF8String], selectedItem.todoDescription.length);
+    }
+    if([keyPath isEqualToString:@"arrangedObjects.todoDueDate"]) {
+        rawItem.dueDateUtc = [selectedItem.todoDueDate timeIntervalSince1970];
     }
     
     [self willChangeValueForKey:@"isAnyObjectWorkingStatus"];
