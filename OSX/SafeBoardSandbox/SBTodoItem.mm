@@ -6,8 +6,7 @@
 //  Copyright © 2015 Vladimir Kukushkin. All rights reserved.
 //
 
-#import "SBTodoItem.h"
-#import "todo_item.h"
+#import "SBTodoItem.hpp"
 
 @implementation SBTodoItem
 
@@ -19,11 +18,12 @@
     return self;
 }
 
-- (instancetype)initWithTitle:(NSString*)title dueDate:(NSDate*)date andDescription:(NSString*)description {
+- (instancetype)initWithTitle:(NSString*)title id:(todo_sample::TodoItemId)newId dueDate:(NSDate*)date andDescription:(NSString*)description {
     if(self = [super init]) {
         self.todoTitle = title;
         self.todoDescription = description;
         self.todoDueDate = date;
+        self.todoId = newId;
     }
     return self;
 }

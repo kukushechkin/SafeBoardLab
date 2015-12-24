@@ -1,13 +1,14 @@
-//
-//  ToDoItemDelegate.h
-//  ToDoList
-//
-//  Created by Alexey Komissarov on 23/12/15.
-//  Copyright © 2015 Kaspersky Lab. All rights reserved.
-//
-
 #import <Foundation/Foundation.h>
 
-@protocol ToDoItemDelegate <NSObject>
+@class ToDoManager;
+@protocol ToDoItem;
+
+
+@protocol ToDoManagerDelegate <NSObject>
+@optional
+
+- (void)todoManager:(ToDoManager *)todoManager didAddItem:(id<ToDoItem>)item;
+- (void)todoManager:(ToDoManager *)todoManager didUpdateItem:(id<ToDoItem>)item;
+- (void)todoManager:(ToDoManager *)todoManager didDeleteItemWithIdentifier:(NSString *)identifier;
 
 @end

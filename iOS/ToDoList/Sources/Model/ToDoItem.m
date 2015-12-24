@@ -19,7 +19,7 @@
                                date:nil];
 }
 
-- (instancetype)initWithIdentifier:(NSNumber *)identifier
+- (instancetype)initWithIdentifier:(NSString *)identifier
                              title:(NSString *)title
                               text:(NSString *)text
                               date:(NSDate *)date {

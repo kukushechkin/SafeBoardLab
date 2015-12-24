@@ -1,4 +1,5 @@
 #import "ToDoTableViewController.h"
+#import "ToDoItemCell.h"
 #import "ToDoManager.h"
 
 typedef NS_ENUM(NSUInteger, ToDoTableViewControllerMode) {
@@ -13,7 +14,9 @@ typedef NS_ENUM(NSUInteger, ToDoTableViewControllerMode) {
 @property (nonatomic, strong) IBOutlet UIBarButtonItem *addItemButton;
 
 @property (nonatomic, assign) ToDoTableViewControllerMode mode;
+
 @property (nonatomic, readonly, strong) ToDoManager *todoManager;
+@property (nonatomic, strong) NSArray<id<ToDoItem>> *todoItems;
 
 @end
 
@@ -40,22 +43,53 @@ typedef NS_ENUM(NSUInteger, ToDoTableViewControllerMode) {
     return self;
 }
 
+#pragma mark - View life cycle
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+
     self.mode = kToDoTableViewControllerMode_Connecting;
+    
+    ToDoTableViewController * __weak weakSelf = self;
     [self.todoManager asyncConnectWithCompletionHandler:^(BOOL success) {
-        self.mode = kToDoTableViewControllerMode_List;
+        weakSelf.mode = kToDoTableViewControllerMode_List;
+        [weakSelf reloadToDoItems];
     }];
 }
 
 #pragma mark - Actions
 
 - (IBAction)didClickAddItemButton:(id)sender {
-    
+    [self presentAddItemController];
 }
 
-#pragma mark - UI
+#pragma mark - UITableViewDataSource
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return self.todoItems.count;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    ToDoItemCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ToDoItem" forIndexPath:indexPath];
+    [cell fillWithToDoItem:self.todoItems[indexPath.row]];
+    return cell;
+}
+
+#pragma mark - ToDoManagerDelegate
+
+- (void)todoManager:(ToDoManager *)todoManager didAddItem:(id<ToDoItem>)item {
+    [self reloadToDoItems];
+}
+
+- (void)todoManager:(ToDoManager *)todoManager didUpdateItem:(id<ToDoItem>)item {
+    [self reloadToDoItems];
+}
+
+- (void)todoManager:(ToDoManager *)todoManager didDeleteItemWithIdentifier:(NSString *)identifier {
+    [self reloadToDoItems];
+}
+
+#pragma mark - Private
 
 - (void)updateNavigationItemForMode:(ToDoTableViewControllerMode)mode {
     UINavigationItem *navigationItem = [self navigationItem];
@@ -74,24 +108,44 @@ typedef NS_ENUM(NSUInteger, ToDoTableViewControllerMode) {
     }
 }
 
+- (void)reloadToDoItems {
+    self.todoItems = [self.todoManager items];
+    [self.tableView reloadData];
+}
+
 - (void)presentAddItemController {
     UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Add Item"
                                                                              message:nil
                                                                       preferredStyle:UIAlertControllerStyleAlert];
+    [alertController addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
+        textField.placeholder = @"Title";
+        [textField becomeFirstResponder];
+    }];
+    [alertController addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
+        textField.placeholder = @"Description";
+    }];
+    [alertController addAction:[UIAlertAction actionWithTitle:@"Ok"
+                                                        style:UIAlertActionStyleDefault
+                                                      handler:^(UIAlertAction * _Nonnull action) {
+                                                          NSString *title = alertController.textFields[0].text;
+                                                          NSString *text = alertController.textFields[1].text;
+                                                          [self addToDoItemWithTitle:title text:text];
+                                                          [self reloadToDoItems];
+                                                      }]];
+    [alertController addAction:[UIAlertAction actionWithTitle:@"Cancel"
+                                                        style:UIAlertActionStyleCancel
+                                                      handler:nil]];
+    [self presentViewController:alertController
+                       animated:YES
+                     completion:nil];
 }
 
-#pragma mark - ToDoManagerDelegate
-
-- (void)todoManager:(ToDoManager *)todoManager didAddItem:(id<ToDoItem>)item {
-    
-}
-
-- (void)todoManager:(ToDoManager *)todoManager didUpdateItem:(id<ToDoItem>)item {
-    
-}
-
-- (void)todoManager:(ToDoManager *)todoManager didDeleteItemWithIdentifier:(NSString *)identifier {
-    
+- (void)addToDoItemWithTitle:(NSString *)title text:(NSString *)text {
+    id<ToDoItem> todoItem = [[ToDoItem alloc] initWithIdentifier:nil
+                                                           title:title
+                                                            text:text
+                                                            date:[NSDate date]];
+    [self.todoManager addItem:todoItem];
 }
 
 @end

@@ -17,15 +17,10 @@
 		747D0C8C1C29B0970001FD42 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 747D0C8B1C29B0970001FD42 /* main.m */; };
 		747D0C8E1C29B0970001FD42 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 747D0C8D1C29B0970001FD42 /* Assets.xcassets */; };
 		747D0C911C29B0970001FD42 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 747D0C8F1C29B0970001FD42 /* MainMenu.xib */; };
-		747D0C9A1C29B17B0001FD42 /* SBMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 747D0C991C29B17B0001FD42 /* SBMainViewController.m */; };
-		747D0C9D1C29B3070001FD42 /* SBTheObject.mm in Sources */ = {isa = PBXBuildFile; fileRef = 747D0C9C1C29B3070001FD42 /* SBTheObject.mm */; };
-		747D0CB21C29E57B0001FD42 /* UsefulStuff.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 747D0CB01C29E57B0001FD42 /* UsefulStuff.cpp */; };
-		747D0CB31C29E57B0001FD42 /* UsefulStuff.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 747D0CB11C29E57B0001FD42 /* UsefulStuff.hpp */; };
-		747D0CB41C29E5880001FD42 /* libUsefulStuff.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 747D0CA51C29E5090001FD42 /* libUsefulStuff.dylib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		7439B5C71C2AA9BB008A8D41 /* SBTodoItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBTodoItem.h; sourceTree = "<group>"; };
+		7439B5C71C2AA9BB008A8D41 /* SBTodoItem.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = SBTodoItem.hpp; sourceTree = "<group>"; };
 		7439B5C81C2AA9BB008A8D41 /* SBTodoItem.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SBTodoItem.mm; sourceTree = "<group>"; };
 		7439B5CA1C2AAA2E008A8D41 /* SBTodoManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBTodoManager.h; sourceTree = "<group>"; };
 		7439B5CB1C2AAA2E008A8D41 /* SBTodoManager.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SBTodoManager.mm; sourceTree = "<group>"; };
@@ -45,11 +40,6 @@
 		747D0C8D1C29B0970001FD42 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		747D0C901C29B0970001FD42 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		747D0C921C29B0970001FD42 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		747D0C981C29B17B0001FD42 /* SBMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBMainViewController.h; sourceTree = "<group>"; };
-		747D0C991C29B17B0001FD42 /* SBMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBMainViewController.m; sourceTree = "<group>"; };
-		747D0C9B1C29B3070001FD42 /* SBTheObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBTheObject.h; sourceTree = "<group>"; };
-		747D0C9C1C29B3070001FD42 /* SBTheObject.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SBTheObject.mm; sourceTree = "<group>"; };
-		747D0CA51C29E5090001FD42 /* libUsefulStuff.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libUsefulStuff.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
 		747D0CB01C29E57B0001FD42 /* UsefulStuff.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = UsefulStuff.cpp; sourceTree = "<group>"; };
 		747D0CB11C29E57B0001FD42 /* UsefulStuff.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = UsefulStuff.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -67,14 +57,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				7439B5E81C2AC261008A8D41 /* libTodoManager.dylib in Frameworks */,
-				747D0CB41C29E5880001FD42 /* libUsefulStuff.dylib in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		747D0CA21C29E5090001FD42 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -84,7 +66,7 @@
 		7439B5C61C2AA851008A8D41 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				7439B5C71C2AA9BB008A8D41 /* SBTodoItem.h */,
+				7439B5C71C2AA9BB008A8D41 /* SBTodoItem.hpp */,
 				7439B5C81C2AA9BB008A8D41 /* SBTodoItem.mm */,
 				7439B5CA1C2AAA2E008A8D41 /* SBTodoManager.h */,
 				7439B5CB1C2AAA2E008A8D41 /* SBTodoManager.mm */,
@@ -118,7 +100,6 @@
 			isa = PBXGroup;
 			children = (
 				747D0C841C29B0970001FD42 /* SafeBoardSandbox.app */,
-				747D0CA51C29E5090001FD42 /* libUsefulStuff.dylib */,
 				7439B5D71C2AC091008A8D41 /* libTodoManager.dylib */,
 			);
 			name = Products;
@@ -135,10 +116,6 @@
 				747D0C8F1C29B0970001FD42 /* MainMenu.xib */,
 				747D0C921C29B0970001FD42 /* Info.plist */,
 				747D0C8A1C29B0970001FD42 /* Supporting Files */,
-				747D0C981C29B17B0001FD42 /* SBMainViewController.h */,
-				747D0C991C29B17B0001FD42 /* SBMainViewController.m */,
-				747D0C9B1C29B3070001FD42 /* SBTheObject.h */,
-				747D0C9C1C29B3070001FD42 /* SBTheObject.mm */,
 				7439B5D01C2AADEB008A8D41 /* SBTodoItemsMainViewController.h */,
 				7439B5D11C2AADEB008A8D41 /* SBTodoItemsMainViewController.m */,
 			);
@@ -169,14 +146,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		747D0CA31C29E5090001FD42 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				747D0CB31C29E57B0001FD42 /* UsefulStuff.hpp in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -217,23 +186,6 @@
 			productReference = 747D0C841C29B0970001FD42 /* SafeBoardSandbox.app */;
 			productType = "com.apple.product-type.application";
 		};
-		747D0CA41C29E5090001FD42 /* UsefulStuff */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 747D0CAD1C29E5090001FD42 /* Build configuration list for PBXNativeTarget "UsefulStuff" */;
-			buildPhases = (
-				747D0CA11C29E5090001FD42 /* Sources */,
-				747D0CA21C29E5090001FD42 /* Frameworks */,
-				747D0CA31C29E5090001FD42 /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = UsefulStuff;
-			productName = UsefulStuff;
-			productReference = 747D0CA51C29E5090001FD42 /* libUsefulStuff.dylib */;
-			productType = "com.apple.product-type.library.dynamic";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -247,9 +199,6 @@
 						CreatedOnToolsVersion = 7.1;
 					};
 					747D0C831C29B0960001FD42 = {
-						CreatedOnToolsVersion = 7.1;
-					};
-					747D0CA41C29E5090001FD42 = {
 						CreatedOnToolsVersion = 7.1;
 					};
 				};
@@ -268,7 +217,6 @@
 			projectRoot = "";
 			targets = (
 				747D0C831C29B0960001FD42 /* SafeBoardSandbox */,
-				747D0CA41C29E5090001FD42 /* UsefulStuff */,
 				7439B5D61C2AC091008A8D41 /* TodoManager */,
 			);
 		};
@@ -301,20 +249,10 @@
 			files = (
 				7439B5CC1C2AAA2E008A8D41 /* SBTodoManager.mm in Sources */,
 				747D0C8C1C29B0970001FD42 /* main.m in Sources */,
-				747D0C9D1C29B3070001FD42 /* SBTheObject.mm in Sources */,
 				7439B5D21C2AADEB008A8D41 /* SBTodoItemsMainViewController.m in Sources */,
 				7439B5CF1C2AACCD008A8D41 /* SBTodoItemsArrayController.mm in Sources */,
 				747D0C891C29B0970001FD42 /* AppDelegate.m in Sources */,
 				7439B5C91C2AA9BB008A8D41 /* SBTodoItem.mm in Sources */,
-				747D0C9A1C29B17B0001FD42 /* SBMainViewController.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		747D0CA11C29E5090001FD42 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				747D0CB21C29E57B0001FD42 /* UsefulStuff.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -481,34 +419,6 @@
 			};
 			name = Release;
 		};
-		747D0CAE1C29E5090001FD42 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				EXECUTABLE_PREFIX = lib;
-				GCC_ENABLE_CPP_EXCEPTIONS = YES;
-				GCC_ENABLE_CPP_RTTI = YES;
-				GCC_SYMBOLS_PRIVATE_EXTERN = YES;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Debug;
-		};
-		747D0CAF1C29E5090001FD42 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				EXECUTABLE_PREFIX = lib;
-				GCC_ENABLE_CPP_EXCEPTIONS = YES;
-				GCC_ENABLE_CPP_RTTI = YES;
-				GCC_SYMBOLS_PRIVATE_EXTERN = YES;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -519,6 +429,7 @@
 				7439B5E11C2AC091008A8D41 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		747D0C7F1C29B0960001FD42 /* Build configuration list for PBXProject "SafeBoardSandbox" */ = {
 			isa = XCConfigurationList;
@@ -534,15 +445,6 @@
 			buildConfigurations = (
 				747D0C961C29B0970001FD42 /* Debug */,
 				747D0C971C29B0970001FD42 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		747D0CAD1C29E5090001FD42 /* Build configuration list for PBXNativeTarget "UsefulStuff" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				747D0CAE1C29E5090001FD42 /* Debug */,
-				747D0CAF1C29E5090001FD42 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

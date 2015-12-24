@@ -10,9 +10,6 @@
 
 @implementation SBTodoItemsArrayController
 
-//- (void)awakeFromNib {
-//}
-
 - (IBAction)add:(id)sender {
     [m_manager createObject];
 }

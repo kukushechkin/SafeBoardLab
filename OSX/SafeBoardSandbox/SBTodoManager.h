@@ -16,8 +16,12 @@
 }
 
 @property (nonatomic, readonly) NSArray * todoItems;
+@property (nonatomic, readonly) BOOL isConnected;
+@property (nonatomic, readonly) BOOL isConnecting;
 
 - (void)createObject;
 - (void)removeObjectsAtIndex:(NSInteger)index;
+
+- (IBAction)connect:(id)sender;
 
 @end
