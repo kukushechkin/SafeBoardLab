@@ -12,8 +12,13 @@
 		7439B5CF1C2AACCD008A8D41 /* SBTodoItemsArrayController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7439B5CE1C2AACCD008A8D41 /* SBTodoItemsArrayController.mm */; };
 		7439B5D21C2AADEB008A8D41 /* SBTodoItemsMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7439B5D11C2AADEB008A8D41 /* SBTodoItemsMainViewController.m */; };
 		7439B5E81C2AC261008A8D41 /* libTodoManager.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 7439B5D71C2AC091008A8D41 /* libTodoManager.dylib */; };
-		7451CFEE1C2C514300F6091F /* todo_manager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7451CFED1C2C514300F6091F /* todo_manager.cpp */; };
 		7451CFEF1C2C514E00F6091F /* todo_manager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7451CFED1C2C514300F6091F /* todo_manager.cpp */; };
+		7451CFF71C2C525200F6091F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 747D0C8B1C29B0970001FD42 /* main.m */; };
+		7451CFFA1C2C525200F6091F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 747D0C881C29B0970001FD42 /* AppDelegate.m */; };
+		7451CFFD1C2C525200F6091F /* libTodoManager.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 7439B5D71C2AC091008A8D41 /* libTodoManager.dylib */; };
+		7451CFFF1C2C525200F6091F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 747D0C8D1C29B0970001FD42 /* Assets.xcassets */; };
+		7451D0001C2C525200F6091F /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 747D0C8F1C29B0970001FD42 /* MainMenu.xib */; };
+		7451D0091C2C529B00F6091F /* SBTodoItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7451D0081C2C529B00F6091F /* SBTodoItem.swift */; };
 		747D0C891C29B0970001FD42 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 747D0C881C29B0970001FD42 /* AppDelegate.m */; };
 		747D0C8C1C29B0970001FD42 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 747D0C8B1C29B0970001FD42 /* main.m */; };
 		747D0C8E1C29B0970001FD42 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 747D0C8D1C29B0970001FD42 /* Assets.xcassets */; };
@@ -22,6 +27,13 @@
 
 /* Begin PBXContainerItemProxy section */
 		7451CFF01C2C515800F6091F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 747D0C7C1C29B0960001FD42 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7439B5D61C2AC091008A8D41;
+			remoteInfo = TodoManager;
+		};
+		7451CFF41C2C525200F6091F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 747D0C7C1C29B0960001FD42 /* Project object */;
 			proxyType = 1;
@@ -44,6 +56,10 @@
 		7451CFEB1C2C513A00F6091F /* todo_item.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = todo_item.h; path = ../../../Components/todo/include/todo/todo_item.h; sourceTree = "<group>"; };
 		7451CFEC1C2C513A00F6091F /* todo_manager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = todo_manager.h; path = ../../../Components/todo/include/todo/todo_manager.h; sourceTree = "<group>"; };
 		7451CFED1C2C514300F6091F /* todo_manager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = todo_manager.cpp; path = ../../../Components/todo/src/todo_manager.cpp; sourceTree = "<group>"; };
+		7451D0041C2C525200F6091F /* SafeBoardSandbox_swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SafeBoardSandbox_swift.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7451D0051C2C525300F6091F /* Info_swift.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info_swift.plist; path = "/Users/kukushechkin/Projects/SafeBoardSandbox/OSX/ObjC++/Info_swift.plist"; sourceTree = "<absolute>"; };
+		7451D0071C2C529B00F6091F /* SafeBoardSandbox_swift-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SafeBoardSandbox_swift-Bridging-Header.h"; sourceTree = "<group>"; };
+		7451D0081C2C529B00F6091F /* SBTodoItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SBTodoItem.swift; sourceTree = "<group>"; };
 		747D0C841C29B0970001FD42 /* SafeBoardSandbox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SafeBoardSandbox.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		747D0C871C29B0970001FD42 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		747D0C881C29B0970001FD42 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -60,6 +76,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7451CFFC1C2C525200F6091F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7451CFFD1C2C525200F6091F /* libTodoManager.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -98,6 +122,15 @@
 			name = TodoManager;
 			sourceTree = "<group>";
 		};
+		7451D0061C2C526300F6091F /* Swift Model */ = {
+			isa = PBXGroup;
+			children = (
+				7451D0081C2C529B00F6091F /* SBTodoItem.swift */,
+				7451D0071C2C529B00F6091F /* SafeBoardSandbox_swift-Bridging-Header.h */,
+			);
+			name = "Swift Model";
+			sourceTree = "<group>";
+		};
 		747D0C7B1C29B0960001FD42 = {
 			isa = PBXGroup;
 			children = (
@@ -112,6 +145,7 @@
 			children = (
 				747D0C841C29B0970001FD42 /* SafeBoardSandbox.app */,
 				7439B5D71C2AC091008A8D41 /* libTodoManager.dylib */,
+				7451D0041C2C525200F6091F /* SafeBoardSandbox_swift.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -120,11 +154,13 @@
 			isa = PBXGroup;
 			children = (
 				7439B5F11C2ACCDF008A8D41 /* TodoManager */,
+				7451D0061C2C526300F6091F /* Swift Model */,
 				7439B5C61C2AA851008A8D41 /* Model */,
 				747D0C871C29B0970001FD42 /* AppDelegate.h */,
 				747D0C881C29B0970001FD42 /* AppDelegate.m */,
 				747D0C8D1C29B0970001FD42 /* Assets.xcassets */,
 				747D0C8F1C29B0970001FD42 /* MainMenu.xib */,
+				7451D0051C2C525300F6091F /* Info_swift.plist */,
 				747D0C921C29B0970001FD42 /* Info.plist */,
 				747D0C8A1C29B0970001FD42 /* Supporting Files */,
 				7439B5D01C2AADEB008A8D41 /* SBTodoItemsMainViewController.h */,
@@ -180,6 +216,24 @@
 			productReference = 7439B5D71C2AC091008A8D41 /* libTodoManager.dylib */;
 			productType = "com.apple.product-type.library.dynamic";
 		};
+		7451CFF21C2C525200F6091F /* SafeBoardSandbox_swift */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7451D0011C2C525200F6091F /* Build configuration list for PBXNativeTarget "SafeBoardSandbox_swift" */;
+			buildPhases = (
+				7451CFF51C2C525200F6091F /* Sources */,
+				7451CFFC1C2C525200F6091F /* Frameworks */,
+				7451CFFE1C2C525200F6091F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7451CFF31C2C525200F6091F /* PBXTargetDependency */,
+			);
+			name = SafeBoardSandbox_swift;
+			productName = SafeBoardSandbox;
+			productReference = 7451D0041C2C525200F6091F /* SafeBoardSandbox_swift.app */;
+			productType = "com.apple.product-type.application";
+		};
 		747D0C831C29B0960001FD42 /* SafeBoardSandbox */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 747D0C951C29B0970001FD42 /* Build configuration list for PBXNativeTarget "SafeBoardSandbox" */;
@@ -204,6 +258,7 @@
 		747D0C7C1C29B0960001FD42 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0710;
 				LastUpgradeCheck = 0710;
 				ORGANIZATIONNAME = "Vladimir Kukushkin";
 				TargetAttributes = {
@@ -229,12 +284,22 @@
 			projectRoot = "";
 			targets = (
 				747D0C831C29B0960001FD42 /* SafeBoardSandbox */,
+				7451CFF21C2C525200F6091F /* SafeBoardSandbox_swift */,
 				7439B5D61C2AC091008A8D41 /* TodoManager */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		7451CFFE1C2C525200F6091F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7451CFFF1C2C525200F6091F /* Assets.xcassets in Resources */,
+				7451D0001C2C525200F6091F /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		747D0C821C29B0960001FD42 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -255,6 +320,16 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		7451CFF51C2C525200F6091F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7451CFF71C2C525200F6091F /* main.m in Sources */,
+				7451CFFA1C2C525200F6091F /* AppDelegate.m in Sources */,
+				7451D0091C2C529B00F6091F /* SBTodoItem.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		747D0C801C29B0960001FD42 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -264,7 +339,6 @@
 				7439B5D21C2AADEB008A8D41 /* SBTodoItemsMainViewController.m in Sources */,
 				7439B5CF1C2AACCD008A8D41 /* SBTodoItemsArrayController.mm in Sources */,
 				747D0C891C29B0970001FD42 /* AppDelegate.m in Sources */,
-				7451CFEE1C2C514300F6091F /* todo_manager.cpp in Sources */,
 				7439B5C91C2AA9BB008A8D41 /* SBTodoItem.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -276,6 +350,11 @@
 			isa = PBXTargetDependency;
 			target = 7439B5D61C2AC091008A8D41 /* TodoManager */;
 			targetProxy = 7451CFF01C2C515800F6091F /* PBXContainerItemProxy */;
+		};
+		7451CFF31C2C525200F6091F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7439B5D61C2AC091008A8D41 /* TodoManager */;
+			targetProxy = 7451CFF41C2C525200F6091F /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -316,6 +395,53 @@
 				GCC_ENABLE_CPP_RTTI = YES;
 				GCC_SYMBOLS_PRIVATE_EXTERN = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		7451D0021C2C525200F6091F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
+				CLANG_ENABLE_MODULES = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_PEDANTIC = NO;
+				HEADER_SEARCH_PATHS = (
+					"\"$(SRCROOT)/UsefulStuff\"",
+					"$(SRCROOT)",
+					"\"$(SRCROOT)/TodoManager\"",
+					"\"$(SRCROOT)/../Components/todo/include/todo\"",
+				);
+				INFOPLIST_FILE = Info_swift.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.kaspersky.SafeBoardSandbox;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "SafeBoardSandbox/SafeBoardSandbox_swift-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		7451D0031C2C525200F6091F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
+				CLANG_ENABLE_MODULES = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_PEDANTIC = NO;
+				HEADER_SEARCH_PATHS = (
+					"\"$(SRCROOT)/UsefulStuff\"",
+					"$(SRCROOT)",
+					"\"$(SRCROOT)/TodoManager\"",
+					"\"$(SRCROOT)/../Components/todo/include/todo\"",
+				);
+				INFOPLIST_FILE = Info_swift.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.kaspersky.SafeBoardSandbox;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "SafeBoardSandbox/SafeBoardSandbox_swift-Bridging-Header.h";
 			};
 			name = Release;
 		};
@@ -448,6 +574,15 @@
 			buildConfigurations = (
 				7439B5E01C2AC091008A8D41 /* Debug */,
 				7439B5E11C2AC091008A8D41 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7451D0011C2C525200F6091F /* Build configuration list for PBXNativeTarget "SafeBoardSandbox_swift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7451D0021C2C525200F6091F /* Debug */,
+				7451D0031C2C525200F6091F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
