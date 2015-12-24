@@ -79,9 +79,7 @@
         rawItem.dueDateUtc = [selectedItem.todoDueDate timeIntervalSince1970];
     }
     
-    [self willChangeValueForKey:@"todoItems"];
     m_todoManager.UpdateItem(rawItem);
-    [self didChangeValueForKey:@"todoItems"];
 }
 
 
