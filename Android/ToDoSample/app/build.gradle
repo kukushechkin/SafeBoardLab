@@ -1,0 +1,70 @@
+apply plugin: 'com.android.application'
+
+afterEvaluate {
+    android.buildTypes.all { buildType ->
+        def buildTypeName = buildType.name.capitalize()
+        def ndkDir = project.plugins.findPlugin('com.android.application').sdkHandler.getNdkFolder()
+        def ndkCmd = System.getProperty("os.name").toLowerCase().contains("windows") ? "ndk-build.cmd" : "ndk-build"
+        def jniSrcPath = "src/main/jni";
+        def compPath = new File("../../Components/todo/").getCanonicalPath()
+        def ndkBuild = tasks.create(name: 'ndk' + buildTypeName + 'Build', type: Exec) {
+            def debugFlag = (buildType.name == "debug") ? 1 : 0
+            commandLine "$ndkDir/$ndkCmd",
+                    "NDK_PROJECT_PATH=$jniSrcPath",
+                    "APP_BUILD_SCRIPT=$jniSrcPath/Android.mk",
+                    "NDK_APPLICATION_MK=$jniSrcPath/Application.mk",
+                    "NDK_DEBUG=$debugFlag",
+                    "COMPONENTS_PATH=$compPath"
+        }
+        tasks.getByPath('compile' + buildTypeName + 'JavaWithJavac').dependsOn ndkBuild
+
+        def ndkClean = tasks.create(name: 'ndk' + buildTypeName + 'Clean', type: Exec) {
+            commandLine "$ndkDir/$ndkCmd",
+                    'clean',
+                    "NDK_PROJECT_PATH=$jniSrcPath",
+                    "APP_BUILD_SCRIPT=$jniSrcPath/Android.mk",
+                    "NDK_APPLICATION_MK=$jniSrcPath/Application.mk",
+                    "COMPONENTS_PATH=$compPath"
+        }
+        tasks.getByPath('clean').dependsOn ndkClean
+    }
+}
+
+android {
+    compileSdkVersion 23
+    buildToolsVersion "23.0.1"
+
+    sourceSets {
+        main {
+            jni.srcDirs = []
+            jniLibs.srcDirs = ['src/main/jni/libs']
+        }
+    }
+
+    defaultConfig {
+        applicationId "todo.kaspersky.com.todosample"
+        minSdkVersion 15
+        targetSdkVersion 23
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile 'com.android.support:appcompat-v7:23.0.1'
+    compile 'com.android.support:design:23.0.1'
+    compile 'com.android.support:recyclerview-v7:23.0.1'
+    compile 'com.google.guava:guava:18.0'
+
+    androidTestCompile 'com.android.support.test.espresso:espresso-core:2.2.1'
+    androidTestCompile ('com.android.support.test.espresso:espresso-contrib:2.2.1') {
+        exclude module: 'support-v4'
+        exclude module: 'recyclerview-v7'
+    }
+}
