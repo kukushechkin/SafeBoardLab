@@ -12,9 +12,7 @@ public class ToDoManager implements Closeable {
 	}
 
 	public void connect() throws IOException {
-		if (!nativeConnect()) {
-			throw new IOException("connect failed");
-		}
+		nativeConnect();
 	}
 
 	public void create() throws IOException {
@@ -30,7 +28,7 @@ public class ToDoManager implements Closeable {
 		nativeClose();
 	}
 
-	private static native boolean nativeConnect() throws IOException;
+	private static native void nativeConnect() throws IOException;
 	private static native void nativeCreate() throws IOException;
 	private static native ToDoItem[] nativeGetItems() throws IOException;
 	private static native void nativeClose() throws IOException;

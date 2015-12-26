@@ -2,7 +2,12 @@
 #include "todo_exports.h"
 #include "todo_item.h"
 #include <vector>
-#include <mutex>
+#include <memory>
+
+namespace std
+{
+	class mutex;
+}
 
 namespace todo_sample
 {
@@ -42,7 +47,7 @@ private:
 	TodoItemsCollection::iterator FindItemById(const TodoItemId& id);
 	TodoItemsCollection::const_iterator FindItemById(const TodoItemId& id) const;
 
-	mutable std::mutex m_mutex;
+	mutable std::unique_ptr<std::mutex> m_mutex;
 };
 
 }
