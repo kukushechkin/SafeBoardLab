@@ -3,7 +3,7 @@
 #include <algorithm>
 #include <thread>
 #include <chrono>
-
+#include <mutex>
 
 typedef std::lock_guard<std::mutex> LockGuard;
 
@@ -30,6 +30,10 @@ void Notify(ItemModifiedCallback* callback, const TodoItemId& id)
 }
 
 TodoManager::TodoManager()
+	: m_addedCallback(nullptr)
+	, m_updatedCallback(nullptr)
+	, m_deletedCallback(nullptr)
+	, m_mutex(new std::mutex)
 {
 
 }
@@ -41,7 +45,7 @@ TodoManager::~TodoManager()
 
 bool TodoManager::Connect()
 {
-	LockGuard lock(m_mutex);
+	LockGuard lock(*m_mutex.get());
 	m_isConnected = true;
 	Sleep(2);
 	return m_isConnected;
@@ -49,20 +53,20 @@ bool TodoManager::Connect()
 
 void TodoManager::Close()
 {
-	LockGuard lock(m_mutex);
+	LockGuard lock(*m_mutex.get());
 	m_isConnected = false;
 }
 
 TodoItemsCollection TodoManager::GetItems() const
 {
-	LockGuard lock(m_mutex);
+	LockGuard lock(*m_mutex.get());
 	//Sleep(1);
 	return m_todoItems;
 }
 
 bool TodoManager::GetItem(const TodoItemId& id, TodoItem& item) const
 {
-	LockGuard lock(m_mutex);
+	LockGuard lock(*m_mutex.get());
 	//Sleep(1);
 	auto itemInCollection = FindItemById(id);
 	
@@ -79,7 +83,7 @@ bool TodoManager::GetItem(const TodoItemId& id, TodoItem& item) const
 
 TodoItem TodoManager::CreateItem()
 {
-	LockGuard lock(m_mutex);
+	LockGuard lock(*m_mutex.get());
 	TodoItem item = {0};
 	item.id = m_todoItems.size();
 	strncpy(item.title, "New todo item", MaxTitle);
@@ -97,7 +101,7 @@ TodoItem TodoManager::CreateItem()
 
 bool TodoManager::UpdateItem(const TodoItem& item)
 {
-	LockGuard lock(m_mutex);
+	LockGuard lock(*m_mutex.get());
 	auto itemInCollection = FindItemById(item.id);
 	if (itemInCollection != std::end(m_todoItems))
 	{
@@ -117,7 +121,7 @@ bool TodoManager::UpdateItem(const TodoItem& item)
 
 bool TodoManager::DeleteItem(const TodoItemId& id)
 {
-	LockGuard lock(m_mutex);
+	LockGuard lock(*m_mutex.get());
 	auto itemInCollection = FindItemById(id);
 	if (itemInCollection != std::end(m_todoItems))
 	{
@@ -136,19 +140,19 @@ bool TodoManager::DeleteItem(const TodoItemId& id)
 
 void TodoManager::SetAddCallback(ItemModifiedCallback* func)
 {
-	LockGuard lock(m_mutex);
+	LockGuard lock(*m_mutex.get());
 	m_addedCallback = func;
 }
 
 void TodoManager::SetUpdatedCallback(ItemModifiedCallback* func)
 {
-	LockGuard lock(m_mutex);
+	LockGuard lock(*m_mutex.get());
 	m_updatedCallback = func;
 }
 
 void TodoManager::SetDeletedCallback(ItemModifiedCallback* func)
 {
-	LockGuard lock(m_mutex);
+	LockGuard lock(*m_mutex.get());
 	m_deletedCallback = func;
 }
 
