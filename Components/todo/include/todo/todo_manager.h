@@ -6,7 +6,10 @@
 
 namespace std
 {
-	class mutex;
+    inline namespace __1
+    {
+        class mutex;
+    }
 }
 
 namespace todo_sample

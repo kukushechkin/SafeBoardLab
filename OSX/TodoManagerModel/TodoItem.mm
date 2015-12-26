@@ -3,7 +3,7 @@
 //  SafeBoardSandbox
 //
 //  Created by Vladimir Kukushkin on 12/26/15.
-//  Copyright © 2015 Vladimir Kukushkin. All rights reserved.
+//  Copyright © 2015 Kaspersky Lab. All rights reserved.
 //
 
 #import "TodoItem.h"
