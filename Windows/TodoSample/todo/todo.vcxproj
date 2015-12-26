@@ -167,6 +167,7 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\..\Components\todo\include\todo\todo_exports.h" />
     <ClInclude Include="..\..\..\Components\todo\include\todo\todo_item.h" />
     <ClInclude Include="..\..\..\Components\todo\include\todo\todo_manager.h" />
   </ItemGroup>
