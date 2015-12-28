@@ -1,14 +1,15 @@
 //
-//  SBTodoItem.m
+//  TodoItem.m
 //  SafeBoardSandbox
 //
-//  Created by Vladimir Kukushkin on 12/23/15.
-//  Copyright © 2015 Vladimir Kukushkin. All rights reserved.
+//  Created by Vladimir Kukushkin on 12/26/15.
+//  Copyright © 2015 Kaspersky Lab. All rights reserved.
 //
 
-#import "SBTodoItem.hpp"
+#import "TodoItem.h"
+#import "todo_item.h"
 
-@implementation SBTodoItem
+@implementation TodoItem
 
 - (instancetype)init {
     if(self = [super init]) {
@@ -18,7 +19,10 @@
     return self;
 }
 
-- (instancetype)initWithTitle:(NSString*)title id:(todo_sample::TodoItemId)newId dueDate:(NSDate*)date andDescription:(NSString*)description {
+- (instancetype)initWithTitle:(NSString*)title
+                           id:(NSInteger)newId
+                      dueDate:(NSDate*)date
+               andDescription:(NSString*)description {
     if(self = [super init]) {
         self.todoTitle = title;
         self.todoDescription = description;
@@ -27,5 +31,6 @@
     }
     return self;
 }
+
 
 @end
