@@ -21,7 +21,7 @@ class TodoMainViewController_swift : NSViewController {
     
     override func viewDidLoad() {
         
-        let options = NSKeyValueObservingOptions([.New, .Old])
+        let options = NSKeyValueObservingOptions([.new, .old])
         
         m_itemsArrayController.addObserver(self, forKeyPath:"arrangedObjects.todoTitle", options:options, context:nil)
         m_itemsArrayController.addObserver(self, forKeyPath:"arrangedObjects.todoDescription", options:options, context:nil)
@@ -30,30 +30,31 @@ class TodoMainViewController_swift : NSViewController {
         self.manager.connect(self);
     }
     
-    override func observeValueForKeyPath(keyPath: String?, ofObject object: AnyObject?, change: [String : AnyObject]?, context: UnsafeMutablePointer<Void>) {
-        if let arrayController = object {
-            if(self.manager.items.count <= arrayController.selectionIndex) {
+    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+        if let arrayController = object as? NSArrayController {
+            if(self.manager.items.count <= (arrayController as AnyObject).selectionIndex) {
                 return;
             }
             
-            let selectedItem = m_itemsArrayController.arrangedObjects.objectAtIndex(arrayController.selectionIndex)
-            if(keyPath == "arrangedObjects.todoTitle") {
-                self.manager.updateTitleforObjectAtIndex(arrayController.selectionIndex, withValue:selectedItem.todoTitle)
-            }
-            if(keyPath == "arrangedObjects.todoDescription") {
-                self.manager.updateDescriptionforObjectAtIndex(arrayController.selectionIndex, withValue:selectedItem.todoDescription);
-            }
-            if(keyPath == "arrangedObjects.todoDueDate") {
-                self.manager.updateDueDateforObjectAtIndex(arrayController.selectionIndex, withValue:selectedItem.todoDueDate);
+            if let selectedItem = (m_itemsArrayController.arrangedObjects as! NSArray).object(at:arrayController.selectionIndex) as? TodoItem {
+                if(keyPath == "arrangedObjects.todoTitle") {
+                    self.manager.updateTitleforObject(at: arrayController.selectionIndex, withValue:selectedItem.todoTitle)
+                }
+                if(keyPath == "arrangedObjects.todoDescription") {
+                    self.manager.updateDescriptionforObject(at: arrayController.selectionIndex, withValue:selectedItem.todoDescription);
+                }
+                if(keyPath == "arrangedObjects.todoDueDate") {
+                    self.manager.updateDueDateforObject(at: arrayController.selectionIndex, withValue:selectedItem.todoDueDate);
+                }
             }
         }
     }
     
-    @IBAction func add(sender: AnyObject?) {
+    @IBAction func add(_ sender: AnyObject?) {
         self.manager.createObject()
     }
     
-    @IBAction func remove(sender: AnyObject?) {
-        self.manager.removeObjectAtIndex(m_itemsArrayController.selectionIndex)
+    @IBAction func remove(_ sender: AnyObject?) {
+        self.manager.removeObject(at: m_itemsArrayController.selectionIndex)
     }
 }
