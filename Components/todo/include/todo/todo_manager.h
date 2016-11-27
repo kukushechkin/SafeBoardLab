@@ -4,19 +4,13 @@
 #include <vector>
 #include <memory>
 
-namespace std
-{
-    inline namespace __1
-    {
-        class mutex;
-    }
-}
-
 namespace todo_sample
 {
 
 typedef std::vector<TodoItem> TodoItemsCollection;
 typedef void ItemModifiedCallback(const TodoItemId& id);
+
+class CriticalSection;
 
 class TODO_API TodoManager
 {
@@ -50,7 +44,7 @@ private:
 	TodoItemsCollection::iterator FindItemById(const TodoItemId& id);
 	TodoItemsCollection::const_iterator FindItemById(const TodoItemId& id) const;
 
-	mutable std::unique_ptr<std::mutex> m_mutex;
+	mutable std::unique_ptr<CriticalSection> m_cs;
 };
 
 }
