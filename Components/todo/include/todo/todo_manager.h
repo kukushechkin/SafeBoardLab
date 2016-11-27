@@ -6,10 +6,16 @@
 
 namespace todo_sample
 {
-
+    
+class IConnectCallback
+{
+public:
+    virtual ~IConnectCallback() {}
+    virtual void OnConnect(bool success) = 0;
+};
+ 
 typedef std::vector<TodoItem> TodoItemsCollection;
-typedef void ItemModifiedCallback(const TodoItemId& id);
-
+    
 class CriticalSection;
 
 class TODO_API TodoManager
@@ -18,7 +24,7 @@ public:
 	TodoManager();
 	~TodoManager();
 
-	bool Connect();
+	void Connect(IConnectCallback* callback = 0);
 	void Close();
 
 	TodoItemsCollection GetItems() const;
@@ -28,18 +34,10 @@ public:
 	bool UpdateItem(const TodoItem& item);
 	bool DeleteItem(const TodoItemId& id);
 
-	void SetAddCallback(ItemModifiedCallback* func);
-	void SetUpdatedCallback(ItemModifiedCallback* func);
-	void SetDeletedCallback(ItemModifiedCallback* func);
-
 private:
 	TodoItemsCollection m_todoItems;
 
-	ItemModifiedCallback* m_addedCallback;
-	ItemModifiedCallback* m_updatedCallback;
-	ItemModifiedCallback* m_deletedCallback;
-
-	bool m_isConnected;
+    bool m_isConnected;
 
 	TodoItemsCollection::iterator FindItemById(const TodoItemId& id);
 	TodoItemsCollection::const_iterator FindItemById(const TodoItemId& id) const;

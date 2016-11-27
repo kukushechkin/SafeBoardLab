@@ -9,9 +9,24 @@
 #import "TodoManager.h"
 #import "todo_manager.h"
 
+class ConnectCallback : public todo_sample::IConnectCallback
+{
+public:
+
+    virtual void OnConnect(bool success) override
+    {
+        if (m_handler)
+            m_handler(success);
+    }
+    
+    void (^m_handler)(bool) = 0;
+};
+
+
 @interface TodoManager()
 {
     todo_sample::TodoManager m_todoManager;
+    ConnectCallback          m_connectCallback;
 }
     @property (assign) BOOL isConnecting;
     @property (assign) BOOL isConnected;
@@ -21,6 +36,7 @@
 
 - (instancetype)init {
     if(self = [super init]) {
+        
     }
     return self;
 }
@@ -37,17 +53,15 @@
 }
 
 - (IBAction)connect:(id)sender {
+
     self.isConnecting = YES;
-    dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
-    dispatch_async(queue, ^{
-        if(m_todoManager.Connect()) {
-            // TODO: Anything useful to do on connect?
-        }
-        dispatch_async(dispatch_get_main_queue(), ^{
-            self.isConnecting = NO;
-            self.isConnected = YES;
-        });
-    });
+
+    m_connectCallback.m_handler = ^(bool success){
+        self.isConnecting = NO;
+        self.isConnected = success;
+    };
+    
+    m_todoManager.Connect(&m_connectCallback);
 }
 
 - (IBAction)disconnect:(id)sender {

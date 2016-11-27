@@ -18,13 +18,9 @@ void Sleep(size_t seconds)
 	std::this_thread::sleep_for(std::chrono::seconds(seconds));
 }
 
-void Notify(ItemModifiedCallback* callback, const TodoItemId& id)
+void Notify(std::function<void()> callback)
 {
-	if (callback)
-	{
-		Sleep(1);
-		std::thread(callback, id);
-	}
+    new std::thread (callback);
 }
 
 }
@@ -47,10 +43,7 @@ private:
 typedef std::lock_guard<CriticalSection> LockGuard;
 
 TodoManager::TodoManager()
-	: m_addedCallback(nullptr)
-	, m_updatedCallback(nullptr)
-	, m_deletedCallback(nullptr)
-	, m_cs(new CriticalSection)
+	: m_cs(new CriticalSection)
 {
 
 }
@@ -60,12 +53,15 @@ TodoManager::~TodoManager()
 	Close();
 }
 
-bool TodoManager::Connect()
+void TodoManager::Connect(IConnectCallback* callback)
 {
-	LockGuard lock(*m_cs.get());
-	m_isConnected = true;
-	Sleep(2);
-	return m_isConnected;
+    Notify([this, callback](){
+        Sleep(2);
+        LockGuard lock(*m_cs.get());
+        this->m_isConnected = true;
+        if (callback)
+            callback->OnConnect(true);
+    });
 }
 
 void TodoManager::Close()
@@ -111,8 +107,6 @@ TodoItem TodoManager::CreateItem()
 
 	m_todoItems.push_back(item);
 
-	Notify(m_addedCallback, item.id);
-
 	return item;
 }
 
@@ -125,8 +119,6 @@ bool TodoManager::UpdateItem(const TodoItem& item)
 		strncpy(itemInCollection->title, item.title, MaxTitle);
 		strncpy(itemInCollection->description, item.description, MaxDescription);
 		itemInCollection->dueDateUtc = item.dueDateUtc;
-
-		Notify(m_updatedCallback, item.id);
 
 		return true;
 	}
@@ -145,32 +137,12 @@ bool TodoManager::DeleteItem(const TodoItemId& id)
 		const TodoItemId id = itemInCollection->id;
 		m_todoItems.erase(itemInCollection);
 
-		Notify(m_deletedCallback, id);
-
 		return true;
 	}
 	else
 	{
 		return false;
 	}
-}
-
-void TodoManager::SetAddCallback(ItemModifiedCallback* func)
-{
-	LockGuard lock(*m_cs.get());
-	m_addedCallback = func;
-}
-
-void TodoManager::SetUpdatedCallback(ItemModifiedCallback* func)
-{
-	LockGuard lock(*m_cs.get());
-	m_updatedCallback = func;
-}
-
-void TodoManager::SetDeletedCallback(ItemModifiedCallback* func)
-{
-	LockGuard lock(*m_cs.get());
-	m_deletedCallback = func;
 }
 
 TodoItemsCollection::iterator TodoManager::FindItemById(const TodoItemId& id)
