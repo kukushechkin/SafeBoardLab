@@ -192,7 +192,7 @@
             startingLineNumber = "40"
             endingLineNumber = "40"
             landmarkName = "-connect:"
-            landmarkType = "5">
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -224,7 +224,7 @@
             startingLineNumber = "73"
             endingLineNumber = "73"
             landmarkName = "-updateTitleforObjectAtIndex:withValue:"
-            landmarkType = "5">
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
