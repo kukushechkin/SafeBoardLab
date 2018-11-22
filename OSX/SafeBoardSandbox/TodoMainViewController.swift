@@ -16,7 +16,7 @@ import Cocoa
 import TodoManagerModel
 
 class TodoMainViewController_swift : NSViewController {
-    var manager = TodoManager()
+    @objc dynamic let manager = TodoManager()
     @IBOutlet var m_itemsArrayController : NSArrayController!
     
     override func viewDidLoad() {
