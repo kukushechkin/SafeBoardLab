@@ -7,19 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		790084C621A753AA0034919A /* ToDoTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790084C521A753AA0034919A /* ToDoTableController.swift */; };
+		790084CA21A75CFA0034919A /* ToDoItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790084C921A75CFA0034919A /* ToDoItemCell.swift */; };
 		DE182E091C2AAB5D00CB590E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE182E071C2AAB5D00CB590E /* Main.storyboard */; };
 		DE182E0B1C2AAB5D00CB590E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE182E0A1C2AAB5D00CB590E /* Assets.xcassets */; };
 		DE182E0E1C2AAB5D00CB590E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE182E0C1C2AAB5D00CB590E /* LaunchScreen.storyboard */; };
 		DE182E1E1C2AAC0000CB590E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DE182E181C2AAC0000CB590E /* AppDelegate.m */; };
 		DE182E1F1C2AAC0000CB590E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DE182E191C2AAC0000CB590E /* main.m */; };
-		DE182E201C2AAC0000CB590E /* ToDoTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE182E1D1C2AAC0000CB590E /* ToDoTableViewController.m */; };
 		DE19F4BD1C2AAE3D00A7E471 /* ToDoManager.mm in Sources */ = {isa = PBXBuildFile; fileRef = DE19F4BC1C2AAE3D00A7E471 /* ToDoManager.mm */; };
 		DE19F4C01C2AAE5C00A7E471 /* ToDoItem.m in Sources */ = {isa = PBXBuildFile; fileRef = DE19F4BF1C2AAE5C00A7E471 /* ToDoItem.m */; };
 		DE19F4C51C2ABC5600A7E471 /* NSString+Interop.mm in Sources */ = {isa = PBXBuildFile; fileRef = DE19F4C41C2ABC5600A7E471 /* NSString+Interop.mm */; };
 		DE19F4C81C2ABC6A00A7E471 /* ToDoItem+Interop.mm in Sources */ = {isa = PBXBuildFile; fileRef = DE19F4C71C2ABC6A00A7E471 /* ToDoItem+Interop.mm */; };
 		DE19F4F41C2AC15A00A7E471 /* libtodo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DE19F4E21C2AC07800A7E471 /* libtodo.a */; };
 		DE569A4B1C2AF29900D77344 /* todo_manager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DE569A4A1C2AF29900D77344 /* todo_manager.cpp */; };
-		DE849CB51C2ACD6200076F9D /* ToDoItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DE849CB41C2ACD6200076F9D /* ToDoItemCell.m */; };
 		DE849CBE1C2AFA9000076F9D /* NSDate+Equality.m in Sources */ = {isa = PBXBuildFile; fileRef = DE849CBD1C2AFA9000076F9D /* NSDate+Equality.m */; };
 /* End PBXBuildFile section */
 
@@ -46,6 +46,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		790084C421A753AA0034919A /* ToDoList-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ToDoList-Bridging-Header.h"; sourceTree = "<group>"; };
+		790084C521A753AA0034919A /* ToDoTableController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoTableController.swift; sourceTree = "<group>"; };
+		790084C921A75CFA0034919A /* ToDoItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoItemCell.swift; sourceTree = "<group>"; };
 		DE182DFB1C2AAB5D00CB590E /* ToDoList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToDoList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE182E081C2AAB5D00CB590E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DE182E0A1C2AAB5D00CB590E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ToDoList/Assets.xcassets; sourceTree = "<group>"; };
@@ -54,8 +57,6 @@
 		DE182E171C2AAC0000CB590E /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		DE182E181C2AAC0000CB590E /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		DE182E191C2AAC0000CB590E /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		DE182E1C1C2AAC0000CB590E /* ToDoTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToDoTableViewController.h; sourceTree = "<group>"; };
-		DE182E1D1C2AAC0000CB590E /* ToDoTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToDoTableViewController.m; sourceTree = "<group>"; };
 		DE19F4BB1C2AAE3D00A7E471 /* ToDoManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToDoManager.h; sourceTree = "<group>"; };
 		DE19F4BC1C2AAE3D00A7E471 /* ToDoManager.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ToDoManager.mm; sourceTree = "<group>"; };
 		DE19F4BE1C2AAE5C00A7E471 /* ToDoItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToDoItem.h; sourceTree = "<group>"; };
@@ -70,8 +71,6 @@
 		DE569A471C2AF29900D77344 /* todo_item.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = todo_item.h; sourceTree = "<group>"; };
 		DE569A481C2AF29900D77344 /* todo_manager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = todo_manager.h; sourceTree = "<group>"; };
 		DE569A4A1C2AF29900D77344 /* todo_manager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = todo_manager.cpp; sourceTree = "<group>"; };
-		DE849CB31C2ACD6200076F9D /* ToDoItemCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToDoItemCell.h; sourceTree = "<group>"; };
-		DE849CB41C2ACD6200076F9D /* ToDoItemCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToDoItemCell.m; sourceTree = "<group>"; };
 		DE849CBC1C2AFA9000076F9D /* NSDate+Equality.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Equality.h"; sourceTree = "<group>"; };
 		DE849CBD1C2AFA9000076F9D /* NSDate+Equality.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Equality.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -95,6 +94,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		790084C721A7549C0034919A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				790084C421A753AA0034919A /* ToDoList-Bridging-Header.h */,
+				DE182E191C2AAC0000CB590E /* main.m */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		790084C821A754BA0034919A /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				DE182E171C2AAC0000CB590E /* AppDelegate.h */,
+				DE182E181C2AAC0000CB590E /* AppDelegate.m */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
 		DE182DF21C2AAB5D00CB590E = {
 			isa = PBXGroup;
 			children = (
@@ -131,9 +148,8 @@
 				DE19F4C21C2ABC0200A7E471 /* Categories */,
 				DE182E1A1C2AAC0000CB590E /* Model */,
 				DE182E1B1C2AAC0000CB590E /* UI */,
-				DE182E171C2AAC0000CB590E /* AppDelegate.h */,
-				DE182E181C2AAC0000CB590E /* AppDelegate.m */,
-				DE182E191C2AAC0000CB590E /* main.m */,
+				790084C821A754BA0034919A /* Application */,
+				790084C721A7549C0034919A /* Supporting Files */,
 			);
 			name = Sources;
 			path = ToDoList/Sources;
@@ -154,10 +170,8 @@
 		DE182E1B1C2AAC0000CB590E /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				DE849CB31C2ACD6200076F9D /* ToDoItemCell.h */,
-				DE849CB41C2ACD6200076F9D /* ToDoItemCell.m */,
-				DE182E1C1C2AAC0000CB590E /* ToDoTableViewController.h */,
-				DE182E1D1C2AAC0000CB590E /* ToDoTableViewController.m */,
+				790084C921A75CFA0034919A /* ToDoItemCell.swift */,
+				790084C521A753AA0034919A /* ToDoTableController.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -261,6 +275,7 @@
 				TargetAttributes = {
 					DE182DFA1C2AAB5D00CB590E = {
 						CreatedOnToolsVersion = 7.2;
+						LastSwiftMigration = 1010;
 					};
 					DE19F4E11C2AC07800A7E471 = {
 						CreatedOnToolsVersion = 7.2;
@@ -304,14 +319,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DE182E201C2AAC0000CB590E /* ToDoTableViewController.m in Sources */,
 				DE19F4C01C2AAE5C00A7E471 /* ToDoItem.m in Sources */,
+				790084C621A753AA0034919A /* ToDoTableController.swift in Sources */,
 				DE19F4BD1C2AAE3D00A7E471 /* ToDoManager.mm in Sources */,
 				DE849CBE1C2AFA9000076F9D /* NSDate+Equality.m in Sources */,
 				DE19F4C51C2ABC5600A7E471 /* NSString+Interop.mm in Sources */,
 				DE182E1F1C2AAC0000CB590E /* main.m in Sources */,
 				DE182E1E1C2AAC0000CB590E /* AppDelegate.m in Sources */,
-				DE849CB51C2ACD6200076F9D /* ToDoItemCell.m in Sources */,
+				790084CA21A75CFA0034919A /* ToDoItemCell.swift in Sources */,
 				DE19F4C81C2ABC6A00A7E471 /* ToDoItem+Interop.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -442,11 +457,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				HEADER_SEARCH_PATHS = "${PROJECT_DIR}/../Components/todo/include";
 				INFOPLIST_FILE = ToDoList/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.kaspersky.ToDoList;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "ToDoList/Sources/Supporting Files/ToDoList-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.2;
 			};
 			name = Debug;
 		};
@@ -454,11 +473,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				HEADER_SEARCH_PATHS = "${PROJECT_DIR}/../Components/todo/include";
 				INFOPLIST_FILE = ToDoList/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.kaspersky.ToDoList;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "ToDoList/Sources/Supporting Files/ToDoList-Bridging-Header.h";
+				SWIFT_VERSION = 4.2;
 			};
 			name = Release;
 		};

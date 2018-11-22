@@ -2,9 +2,21 @@
 #import "ToDoItem+Interop.h"
 #include <todo/todo_manager.h>
 
+class ConnectCallback : public todo_sample::IConnectCallback {
+public:
+    
+    void OnConnect(bool success) {
+        if (m_handler) {
+            m_handler(success);
+        }
+    }
+    
+    void (^m_handler)(bool) = 0;
+};
 
 @interface ToDoManager () {
     todo_sample::TodoManager _todoManager;
+    ConnectCallback _connectCallback;
 }
 
 @end
@@ -25,23 +37,26 @@
     [self disconnect];
 }
 
-#pragma mark - Public
+#pragma mark - Private
 
-- (BOOL)connect {
-    return _todoManager.Connect();
+- (void)connectWithBlock:(void (^)(BOOL success))completionHandler {
+    
+    _connectCallback.m_handler = ^(bool success){
+        dispatch_async(dispatch_get_main_queue(), ^{
+            completionHandler(success);
+        });
+    };
+    
+    _todoManager.Connect(&_connectCallback);
 }
+
+#pragma mark - Public
 
 - (void)asyncConnectWithCompletionHandler:(void (^)(BOOL success))completionHandler {
     ToDoManager * __weak weakSelf = self;
     
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        BOOL success = [weakSelf connect];
-        
-        dispatch_async(dispatch_get_main_queue(), ^{
-            if (completionHandler != nil) {
-                completionHandler(success);
-            }
-        });
+        [weakSelf connectWithBlock:completionHandler];
     });
 }
 
