@@ -8,7 +8,6 @@
 
 - (instancetype)init NS_DESIGNATED_INITIALIZER;
 
-- (BOOL)connect;
 - (void)asyncConnectWithCompletionHandler:(void (^)(BOOL success))completionHandler;
 - (void)disconnect;
 
