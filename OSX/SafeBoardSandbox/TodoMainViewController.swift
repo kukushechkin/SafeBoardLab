@@ -19,9 +19,7 @@ class TodoMainViewController_swift : NSViewController {
     
     @IBOutlet var m_itemsArrayController : NSArrayController!
     
-    @objc dynamic var manager: TodoManager {
-        return TodoManager.shared()
-    }
+    @objc dynamic let manager = TodoManager.shared()!
     
     override func viewDidLoad() {
         
