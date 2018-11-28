@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		73C3A92B21AF034000FC56CE /* ArrayController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73C3A92921AF027C00FC56CE /* ArrayController.swift */; };
 		7439B5D21C2AADEB008A8D41 /* TodoMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7439B5D11C2AADEB008A8D41 /* TodoMainViewController.m */; };
 		7451CFF71C2C525200F6091F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 747D0C8B1C29B0970001FD42 /* main.m */; };
 		7451CFFA1C2C525200F6091F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 747D0C881C29B0970001FD42 /* AppDelegate.m */; };
@@ -68,6 +69,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		73C3A92921AF027C00FC56CE /* ArrayController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayController.swift; sourceTree = "<group>"; };
 		7439B5D01C2AADEB008A8D41 /* TodoMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TodoMainViewController.h; sourceTree = "<group>"; };
 		7439B5D11C2AADEB008A8D41 /* TodoMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TodoMainViewController.m; sourceTree = "<group>"; };
 		7439B5D71C2AC091008A8D41 /* libTodoManager.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libTodoManager.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -155,6 +157,7 @@
 			children = (
 				7451D0071C2C529B00F6091F /* SafeBoardSandbox_swift-Bridging-Header.h */,
 				7451D0291C2C58CA00F6091F /* TodoMainViewController.swift */,
+				73C3A92921AF027C00FC56CE /* ArrayController.swift */,
 			);
 			name = "Swift Controllers";
 			sourceTree = "<group>";
@@ -419,6 +422,7 @@
 				7451CFF71C2C525200F6091F /* main.m in Sources */,
 				7451D02B1C2C58E500F6091F /* TodoMainViewController.swift in Sources */,
 				7451CFFA1C2C525200F6091F /* AppDelegate.m in Sources */,
+				73C3A92B21AF034000FC56CE /* ArrayController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

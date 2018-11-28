@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7317FB0F21AEEE9D00C14DBD /* todo_manager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7317FB0E21AEEE9D00C14DBD /* todo_manager.cpp */; };
 		790084C621A753AA0034919A /* ToDoTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790084C521A753AA0034919A /* ToDoTableController.swift */; };
 		790084CA21A75CFA0034919A /* ToDoItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790084C921A75CFA0034919A /* ToDoItemCell.swift */; };
 		DE182E091C2AAB5D00CB590E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE182E071C2AAB5D00CB590E /* Main.storyboard */; };
@@ -19,7 +20,6 @@
 		DE19F4C51C2ABC5600A7E471 /* NSString+Interop.mm in Sources */ = {isa = PBXBuildFile; fileRef = DE19F4C41C2ABC5600A7E471 /* NSString+Interop.mm */; };
 		DE19F4C81C2ABC6A00A7E471 /* ToDoItem+Interop.mm in Sources */ = {isa = PBXBuildFile; fileRef = DE19F4C71C2ABC6A00A7E471 /* ToDoItem+Interop.mm */; };
 		DE19F4F41C2AC15A00A7E471 /* libtodo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DE19F4E21C2AC07800A7E471 /* libtodo.a */; };
-		DE569A4B1C2AF29900D77344 /* todo_manager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DE569A4A1C2AF29900D77344 /* todo_manager.cpp */; };
 		DE849CBE1C2AFA9000076F9D /* NSDate+Equality.m in Sources */ = {isa = PBXBuildFile; fileRef = DE849CBD1C2AFA9000076F9D /* NSDate+Equality.m */; };
 /* End PBXBuildFile section */
 
@@ -46,6 +46,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		7317FB0A21AEEE9D00C14DBD /* todo_exports.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = todo_exports.h; sourceTree = "<group>"; };
+		7317FB0B21AEEE9D00C14DBD /* todo_item.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = todo_item.h; sourceTree = "<group>"; };
+		7317FB0C21AEEE9D00C14DBD /* todo_manager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = todo_manager.h; sourceTree = "<group>"; };
+		7317FB0E21AEEE9D00C14DBD /* todo_manager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = todo_manager.cpp; sourceTree = "<group>"; };
 		790084C421A753AA0034919A /* ToDoList-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ToDoList-Bridging-Header.h"; sourceTree = "<group>"; };
 		790084C521A753AA0034919A /* ToDoTableController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoTableController.swift; sourceTree = "<group>"; };
 		790084C921A75CFA0034919A /* ToDoItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoItemCell.swift; sourceTree = "<group>"; };
@@ -67,10 +71,6 @@
 		DE19F4C61C2ABC6A00A7E471 /* ToDoItem+Interop.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ToDoItem+Interop.h"; sourceTree = "<group>"; };
 		DE19F4C71C2ABC6A00A7E471 /* ToDoItem+Interop.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "ToDoItem+Interop.mm"; sourceTree = "<group>"; };
 		DE19F4E21C2AC07800A7E471 /* libtodo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libtodo.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		DE569A461C2AF29900D77344 /* todo_exports.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = todo_exports.h; sourceTree = "<group>"; };
-		DE569A471C2AF29900D77344 /* todo_item.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = todo_item.h; sourceTree = "<group>"; };
-		DE569A481C2AF29900D77344 /* todo_manager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = todo_manager.h; sourceTree = "<group>"; };
-		DE569A4A1C2AF29900D77344 /* todo_manager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = todo_manager.cpp; sourceTree = "<group>"; };
 		DE849CBC1C2AFA9000076F9D /* NSDate+Equality.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Equality.h"; sourceTree = "<group>"; };
 		DE849CBD1C2AFA9000076F9D /* NSDate+Equality.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Equality.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -94,6 +94,50 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7317FB0621AEEE9D00C14DBD /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				7317FB0721AEEE9D00C14DBD /* todo */,
+			);
+			name = Components;
+			path = ../Components;
+			sourceTree = "<group>";
+		};
+		7317FB0721AEEE9D00C14DBD /* todo */ = {
+			isa = PBXGroup;
+			children = (
+				7317FB0821AEEE9D00C14DBD /* include */,
+				7317FB0D21AEEE9D00C14DBD /* src */,
+			);
+			path = todo;
+			sourceTree = "<group>";
+		};
+		7317FB0821AEEE9D00C14DBD /* include */ = {
+			isa = PBXGroup;
+			children = (
+				7317FB0921AEEE9D00C14DBD /* todo */,
+			);
+			path = include;
+			sourceTree = "<group>";
+		};
+		7317FB0921AEEE9D00C14DBD /* todo */ = {
+			isa = PBXGroup;
+			children = (
+				7317FB0A21AEEE9D00C14DBD /* todo_exports.h */,
+				7317FB0B21AEEE9D00C14DBD /* todo_item.h */,
+				7317FB0C21AEEE9D00C14DBD /* todo_manager.h */,
+			);
+			path = todo;
+			sourceTree = "<group>";
+		};
+		7317FB0D21AEEE9D00C14DBD /* src */ = {
+			isa = PBXGroup;
+			children = (
+				7317FB0E21AEEE9D00C14DBD /* todo_manager.cpp */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
 		790084C721A7549C0034919A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -117,7 +161,7 @@
 			children = (
 				DE182E161C2AAC0000CB590E /* Sources */,
 				DE182E151C2AABDA00CB590E /* Resources */,
-				DE19F4E31C2AC07800A7E471 /* LibToDo */,
+				7317FB0621AEEE9D00C14DBD /* Components */,
 				DE182DFC1C2AAB5D00CB590E /* Products */,
 			);
 			sourceTree = "<group>";
@@ -187,43 +231,6 @@
 				DE849CBD1C2AFA9000076F9D /* NSDate+Equality.m */,
 			);
 			path = Categories;
-			sourceTree = "<group>";
-		};
-		DE19F4E31C2AC07800A7E471 /* LibToDo */ = {
-			isa = PBXGroup;
-			children = (
-				DE569A441C2AF29900D77344 /* include */,
-				DE569A491C2AF29900D77344 /* src */,
-			);
-			path = LibToDo;
-			sourceTree = "<group>";
-		};
-		DE569A441C2AF29900D77344 /* include */ = {
-			isa = PBXGroup;
-			children = (
-				DE569A451C2AF29900D77344 /* todo */,
-			);
-			name = include;
-			path = ../../Components/todo/include;
-			sourceTree = "<group>";
-		};
-		DE569A451C2AF29900D77344 /* todo */ = {
-			isa = PBXGroup;
-			children = (
-				DE569A461C2AF29900D77344 /* todo_exports.h */,
-				DE569A471C2AF29900D77344 /* todo_item.h */,
-				DE569A481C2AF29900D77344 /* todo_manager.h */,
-			);
-			path = todo;
-			sourceTree = "<group>";
-		};
-		DE569A491C2AF29900D77344 /* src */ = {
-			isa = PBXGroup;
-			children = (
-				DE569A4A1C2AF29900D77344 /* todo_manager.cpp */,
-			);
-			name = src;
-			path = ../../Components/todo/src;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -335,7 +342,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DE569A4B1C2AF29900D77344 /* todo_manager.cpp in Sources */,
+				7317FB0F21AEEE9D00C14DBD /* todo_manager.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
