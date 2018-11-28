@@ -18,6 +18,8 @@
 @property (nonatomic, readonly) BOOL isConnected;
 @property (nonatomic, readonly) BOOL isConnecting;
 
++ (instancetype)sharedManager;
+
 - (void)createObject;
 - (void)removeObjectAtIndex:(NSInteger)index;
 - (void)updateTitleforObjectAtIndex:(NSInteger)index withValue:(NSString*)newValue;
