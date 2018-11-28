@@ -34,6 +34,17 @@ public:
 
 @implementation TodoManager
 
++ (instancetype)sharedManager
+{
+    static TodoManager* _sharedInstance;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        _sharedInstance = [TodoManager new];
+    });
+    
+    return _sharedInstance;
+}
+
 - (instancetype)init {
     if(self = [super init]) {
         

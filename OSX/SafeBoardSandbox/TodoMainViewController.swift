@@ -16,38 +16,12 @@ import Cocoa
 import TodoManagerModel
 
 class TodoMainViewController_swift : NSViewController {
-    @objc dynamic let manager = TodoManager()
-    @IBOutlet var m_itemsArrayController : NSArrayController!
+    
+    @IBOutlet var m_itemsArrayController: ArrayController!
+    @objc dynamic let manager = TodoManager.shared()!
     
     override func viewDidLoad() {
-        
-        let options = NSKeyValueObservingOptions([.new, .old])
-        
-        m_itemsArrayController.addObserver(self, forKeyPath:"arrangedObjects.todoTitle", options:options, context:nil)
-        m_itemsArrayController.addObserver(self, forKeyPath:"arrangedObjects.todoDescription", options:options, context:nil)
-        m_itemsArrayController.addObserver(self, forKeyPath:"arrangedObjects.todoDueDate", options:options, context:nil)
-        
         self.manager.connect(self);
-    }
-    
-    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
-        if let arrayController = object as? NSArrayController {
-            if(self.manager.items.count <= (arrayController as AnyObject).selectionIndex) {
-                return;
-            }
-            
-            if let selectedItem = (m_itemsArrayController.arrangedObjects as! NSArray).object(at:arrayController.selectionIndex) as? TodoItem {
-                if(keyPath == "arrangedObjects.todoTitle") {
-                    self.manager.updateTitleforObject(at: arrayController.selectionIndex, withValue:selectedItem.todoTitle)
-                }
-                if(keyPath == "arrangedObjects.todoDescription") {
-                    self.manager.updateDescriptionforObject(at: arrayController.selectionIndex, withValue:selectedItem.todoDescription);
-                }
-                if(keyPath == "arrangedObjects.todoDueDate") {
-                    self.manager.updateDueDateforObject(at: arrayController.selectionIndex, withValue:selectedItem.todoDueDate);
-                }
-            }
-        }
     }
     
     @IBAction func add(_ sender: AnyObject?) {

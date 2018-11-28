@@ -213,3 +213,4 @@ ModelManifest.xml
 
 *.xcworkspace
 xcuserdata
+.DS_Store
